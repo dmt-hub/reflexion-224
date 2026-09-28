@@ -78,11 +78,11 @@ jobs:
           body: |
             An alpha build for testing. macOS 11 or later, Apple silicon or Intel. It contains no firmware.
 
-            The bundles are ad-hoc signed and not notarized, so macOS quarantines them after a download.
+            The bundles are ad-hoc signed and not notarized, so macOS quarantines them after a download and refuses to open them.
 
-            1. Unzip, then copy `Reflexion224.component` to `~/Library/Audio/Plug-Ins/Components`, `Reflexion224.vst3` to `~/Library/Audio/Plug-Ins/VST3`, and `Reflexion224.app` wherever you like.
-            2. Clear the quarantine: double-click `macsetup_remove_quarantine.command`. If macOS refuses to open it, allow it under System Settings > Privacy & Security, or run this in Terminal:
+            1. Unzip. Then clear the quarantine on the unzipped folder by running this in Terminal (change the path if the folder is somewhere else):
                ```
-               xattr -cr ~/Library/Audio/Plug-Ins/Components/Reflexion224.component ~/Library/Audio/Plug-Ins/VST3/Reflexion224.vst3 /path/to/Reflexion224.app
+               xattr -cr ~/Downloads/${{ env.NAME }}
                ```
+            2. Copy `Reflexion224.component` to `~/Library/Audio/Plug-Ins/Components`, `Reflexion224.vst3` to `~/Library/Audio/Plug-Ins/VST3`, and `Reflexion224.app` wherever you like.
             3. Restart your host or rescan its plug-ins. Open the plugin, click **Choose ROMs...** and pick the folder or `.zip` with your own Lexicon chip files. Until then it passes the audio through dry.
