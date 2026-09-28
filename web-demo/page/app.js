@@ -7,7 +7,7 @@ import createLexicon from './lexicon224x.js';
 import { RATE, createMachine, createOperator } from './larc.js';
 import { createPanelOperator } from './panel.js';
 import { saveFirmware, loadFirmware, forgetFirmware } from './firmware_store.js';
-import { expandArchives, findSets, describeSet, setHash, devServerFiles } from './firmware.js';
+import { expandArchives, findSets, describeSet, setHash, devServerFiles, newestSet } from './firmware.js';
 import { shareLink, readShareLink, applyShareLink } from './share.js';
 
 // A share link (share.js) waiting for its firmware: when the loaded chips
@@ -43,7 +43,7 @@ async function addFiles(files, remember) {
     $('savedRoms').hidden = false;
   }
   if (!sets.length) $('bootStatus').textContent = 'no Lexicon chips among those files';
-  showSets(sets.find((set) => !set.unsupported) || chosen);
+  showSets((await newestSet(sets)) || chosen);
   return sets;
 }
 
@@ -87,7 +87,8 @@ $('forgetRoms').onclick = async () => { await forgetFirmware(); $('savedRoms').h
 
 // The dev server's sets (serve.py --roms), then this browser's remembered
 // files. ?rom=SET chooses a set and ?boot=1 powers it on; a share link
-// (share.js) chooses the set whose hash it names and powers on by itself.
+// (share.js) chooses the set whose hash it names and powers on by itself;
+// otherwise the newest set powers on by itself.
 (async () => {
   await devServerFiles((files) => addFiles(files, false));
   const saved = await loadFirmware();
@@ -101,7 +102,9 @@ $('forgetRoms').onclick = async () => { await forgetFirmware(); $('savedRoms').h
     showSets(pick);
     if (params.get('boot') && !pendingShare) { await choose(pick); $('power').click(); }
   } else if (!pendingShare) {
-    showSets(found.find((set) => !set.unsupported));
+    const newest = await newestSet(found);
+    showSets(newest);
+    if (newest) { await choose(newest); $('power').click(); }
   }
   if (pendingShare && !booted) {
     for (const set of found) {

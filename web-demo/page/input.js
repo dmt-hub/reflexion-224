@@ -65,7 +65,7 @@ export function createInput(context) {
   let node = null;          // the page's ScriptProcessor while audio runs
   let mic = null;           // {stream, source} while the microphone is the input
   let inputMuted = false;
-  let lastSource = 'click';
+  let lastSource = $('source').value;
   let periodBeforeRiff = null;   // the repeat period to go back to when the riff stops
 
   $('audioFile').onchange = async (event) => {
@@ -202,6 +202,9 @@ export function createInput(context) {
       setSource('click');
     }
   }
+
+  // The page's default source may be the riff: load it and show its credit.
+  if (source() === 'riff') onSourceChange();
 
   return {
     // Fill inL/inR (frames long) with the input for one audio block, from the

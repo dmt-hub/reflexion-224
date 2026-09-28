@@ -56,6 +56,16 @@ export async function findSets(files) {
   return sets;
 }
 
+// The newest of `sets` that runs: the last in firmware_sets.json's order
+// (oldest machine and version first), else the first supported one.
+export async function newestSet(sets) {
+  const order = (await knownSets()).map((set) => set.name);
+  const runnable = sets.filter((set) => !set.unsupported);
+  const known = runnable.filter((set) => order.includes(set.name));
+  if (!known.length) return runnable[0] || null;
+  return known.reduce((a, b) => (order.indexOf(b.name) > order.indexOf(a.name) ? b : a));
+}
+
 // What kind of machine a set is, for its list entry.
 export function describeSet(set) {
   if (set.model === 1) return 'original 224, front panel';
