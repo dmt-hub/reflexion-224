@@ -1,0 +1,98 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "f77911e9-19af-49ef-a2da-81f34d1d04a1")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 140.335 33.02)
+		(size 78.105 61.595)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "121e4f27-9d7f-4bbd-aaa9-a959002882e5")
+		(property "Sheetname" "HIGH-SPEED2"
+			(at 140.335 32.3084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "HIGH-SPEED2.kicad_sch"
+			(at 140.335 95.1996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Timing_And_Control"
+				(path "/f77911e9-19af-49ef-a2da-81f34d1d04a1"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 39.37 33.02)
+		(size 73.025 60.96)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5a34ecbe-a22f-4b8f-829e-457f0c980a21")
+		(property "Sheetname" "HIGH_SPEED1"
+			(at 39.37 32.3084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "HIGH_SPEED1.kicad_sch"
+			(at 39.37 94.5646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Timing_And_Control"
+				(path "/f77911e9-19af-49ef-a2da-81f34d1d04a1"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

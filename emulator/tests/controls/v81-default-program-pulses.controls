@@ -1,0 +1,9 @@
+# v8.1 boots into its default application program, whose motion service
+# rewrites WCS bytes every ~3,000 CPU cycles (LFO). Feed left, then right,
+# 2 ms input pulses while that runs, so live WCS writes act on real signal.
+17200000 audio 512 0 0 0
+17204096 audio 0 0 0 0
+17600000 audio 0 0 3712 0
+17604096 audio 0 0 0 0
+18000000 audio 1024 1 0 0
+18012288 audio 0 0 0 0

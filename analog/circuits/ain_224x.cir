@@ -1,0 +1,123 @@
+* passB_ain_224x.cir -- *** 224X BUILD *** of Lexicon 224/224X Analog INPUT board, channel 1 (top of p96)
+* Source: Service manual p96 = "SCHEMATIC, INPUT BD., MODEL 224" dwg 060-01321-D sheet 2 of 2.
+* p96 topology + p95 "FOR 224X VERSION ONLY" / REV 9 values; rev5 dotted parts fitted (R99 133K, R32 182K, R33=R100=4.99K).
+* U1,U6 -> LF353 (ideal here). C values unchanged (none listed). Result: doubly-terminated 15 kHz Cauer (-6 dB) + U5 gain 2.
+* (Header lines below describe the as-drawn file.) The dotted "REV 5 BD" elements (p96 note 4: R99,C94,R32(182K),
+*   R100, and the series "R32 4.7K") are switched by .param rev5 (default 0 = 224 build, dotted parts
+*   absent: R99/C94 position = wire, series R32 position = wire, R32 182K & R100 not fitted).
+*   The dotted mods belong with the 224X redesign (p95 REV 9 "224X ONLY": R32 JUMPER->182K,
+*   R33 JUMPER->4.99K, ADD R99,R100...). Setting rev5=1 with the 224 values is NOT a real build.
+*   224X substitutions: see p95 "FOR 224X VERSION ONLY" table -> passB_ain_224x.cir
+* Path: T1 secondary (pin1 hot, pin2 = gnd) -> input level pot R1 -> U1A buffer
+*   -> [R99||C94 rev5] -> 7-pole elliptic FDNR (Bruton-transformed) ladder
+*   -> U5 LF356 buffer -> U6A pre-emphasis (inverting shelf) -> U6B aperture
+*   correction (unity-gain Sallen-Key LP) -> "TO INPUT MUX" (= p95 CHAN 1, C55 22uF into U21 LM398/LF398 S&H)
+* Coordinates ~(x,y) are full-resolution page pixels (300 dpi scan, ~5088x3295).
+* Clamp diodes CR3/CR4 (1N4148 to +/-7V at node n_clamp) omitted (small-signal).
+* Supply-bypass caps omitted.
+
+.subckt OPAMP inp inn out
+E1 out 0 inp inn 1e6
+.ends
+
+* ---- trims / pots (fractions); mid-range defaults ----
+.param rev5=1       ; 1 = include dotted rev-5 board modifications
+.param c94=1.0n     ; C94 printed "1.0/" (unit illegible); 1.0nF strongly indicated (see passB_notes.md); alt 1.0uF
+.param k_r1=0.5      ; R1 50K input level pot, wiper fraction from bottom (R4 end); CW = toward T1 pin1 (up)
+.param f_r19=0.5     ; R19 5K trim (rheostat, wiper tied to R18 end) "NULL FREQ. 11.815 KHz"
+.param f_r25=0.5     ; R25 5K trim "NULL FREQ. 10.240 KHz"
+.param f_r31=0.5     ; R31 5K trim "NULL FREQ. 19.120 KHz"
+
+Vin t1s1 0 AC 1                                   ; T1 pin1 (secondary hot); T1 pin2 -> GND line p96 ~(840,430)
+* R1 50K pot: top = t1s1, bottom = n_r1b, wiper = n_w
+R1a t1s1 n_w {50k*(1-k_r1)+1m}                    ; R1 50K (upper part) p96 ~(736,396)
+R1b n_w n_r1b {50k*k_r1+1m}                       ; R1 50K (lower part) p96 ~(736,396)
+R4 n_r1b 0 10k                                    ; R4 10K p96 ~(736,639)
+R6 n_w n_clamp 2k                                 ; R6 2K p96 ~(829,431)
+R7 n_clamp u1a_p 2k                               ; R7 2K p96 ~(1046,428)
+XU1A u1a_p u1a_n u1a_o OPAMP                      ; U1A 1/2 4558 (pins 3,2,1) p96 ~(1193,460)
+R9 u1a_o u1a_n 3.09k                              ; R9 3.09K,1% p96 ~(1200,610)
+R10 u1a_n 0 2.00k                                 ; R10 2.00K,1% p96 ~(1100,689)
+* +13 dBm test level marked at u1a_o
+* ---- rev-5 dotted mod: R99 || C94 in series between U1A out and R13 ----
+R99 u1a_o n_src {rev5 ? 133k : 1m}                              ; R99 133K,1% (dotted, rev5) p96 ~(1333,167)
+C94 u1a_o n_src {rev5 ? c94 : 1f}                              ; C94 printed "1.0/" (unit illegible; c94 param, 1.0nF chosen) (dotted, rev5) p96 ~(1327,260)
+* ---- ladder series arms (transformed inductors) ----
+R13 n_src n1 11.3k                                ; R13 23.7K 1% p96 ~(1413,460)  [INJECT 10.240kHz at n1] [224X value per p95 table; drawn 23.7k]
+R14 n1 n2 16.5k                                   ; R14 22.6K 1% p96 ~(1780,460)  [INJECT 19.120kHz at n2] [224X value per p95 table; drawn 22.6k]
+R20 n2 n3 14.7k                                   ; R20 22.6K 1% p96 ~(2436,454) [224X value per p95 table; drawn 22.6k]
+R26 n3 n4 8.66k                                   ; R26 10.5K 1% p96 ~(2907,450) [224X value per p95 table; drawn 10.5k]
+* ---- shunt branch 1 at n1: R15 + GIC FDNR (U2) ----
+R15 n1 g1a 1.5k                                  ; R15 7.68K 1% p96 ~(1517,540) [224X value per p95 table; drawn 7.68k]
+C3 g1a g1b 1000p                                  ; C3 1000pf p96 ~(1517,660)
+R16 g1b g1c 4.99k                                   ; R16 10K 1% p96 ~(1510,783) [224X value per p95 table; drawn 10k]
+R17 g1c g1d 4.99k                                   ; R17 10K 1% p96 ~(1517,957) [224X value per p95 table; drawn 10k]
+R18 g1d g1t 13.3k                                 ; R18 21.5K 1% p96 ~(1517,1103) [224X value per p95 table; drawn 21.5k]
+R19 g1t g1e 1m                         ; R19 5K trim p96 ~(1517,1210) [224X: JUMPER per p95 table]
+C6 g1e 0 1000p                                    ; C6 1000pf p96 ~(1517,1323)
+XU2A g1a g1c g1d OPAMP                            ; U2A 1/2 4558 (+3 -2 out1) p96 ~(1687,803)
+XU2B g1e g1c g1b OPAMP                            ; U2B 1/2 4558 (+5 -6 out7) p96 ~(1340,797)
+C4 g1b g1c 10p                                    ; C4 10pf (U2B out7 to -in6) p96 ~(1427,803)
+C5 g1c g1d 10p                                    ; C5 10pf (U2A -in2 to out1) p96 ~(1577,910)
+* ---- shunt branch 2 at n2: R21 + GIC FDNR (U3) ----
+R21 n2 g2a 7.15k                                  ; R21 13.7K 1% p96 ~(2111,536) [224X value per p95 table; drawn 13.7k]
+C9 g2a g2b 1000p                                  ; C9 1000pf p96 ~(2111,657)
+R22 g2b g2c 4.99k                                   ; R22 10K 1% p96 ~(2111,764) [224X value per p95 table; drawn 10k]
+R23 g2c g2d 4.99k                                   ; R23 10K 1% p96 ~(2111,957) [224X value per p95 table; drawn 10k]
+R24 g2d g2t 9.76k                                 ; R24 15.4K 1% p96 ~(2111,1093) [224X value per p95 table; drawn 15.4k]
+R25 g2t g2e 1m                         ; R25 5K trim p96 ~(2111,1207) [224X: JUMPER per p95 table]
+C12 g2e 0 1000p                                   ; C12 1000pf p96 ~(2111,1314)
+XU3A g2a g2c g2d OPAMP                            ; U3A 1/2 4558 (+3 -2 out1) p96 ~(2307,786)
+XU3B g2e g2c g2b OPAMP                            ; U3B 1/2 4558 (+5 -6 out7) p96 ~(1900,800)
+C10 g2b g2c 10p                                   ; C10 10pf p96 ~(2004,786)
+C11 g2c g2d 10p                                   ; C11 10pf p96 ~(2179,950)
+* ---- shunt branch 3 at n3: R27 + GIC FDNR (U4) ----
+R27 n3 g3a 5.23k                                  ; R27 3.09K 1% p96 ~(2743,529) [224X value per p95 table; drawn 3.09k]
+C15 g3a g3b 1000p                                 ; C15 1000pf p96 ~(2743,650)
+R28 g3b g3c 4.99k                                   ; R28 10K 1% p96 ~(2743,764) [224X value per p95 table; drawn 10k]
+R29 g3c g3d 4.99k                                   ; R29 10K 1% p96 ~(2743,929) [224X value per p95 table; drawn 10k]
+R30 g3d g3t 10.0k                                 ; R30 20.0K 1% p96 ~(2743,1071) [224X value per p95 table; drawn 20.0k]
+R31 g3t g3e 1m                         ; R31 5K trim p96 ~(2743,1200) [224X: JUMPER per p95 table]
+C18 g3e 0 1000p                                   ; C18 1000pf p96 ~(2743,1314)
+XU4A g3a g3c g3d OPAMP                            ; U4A 1/2 4558 (+3 -2 out1) p96 ~(2950,786)
+XU4B g3e g3c g3b OPAMP                            ; U4B 1/2 4558 (+5 -6 out7) p96 ~(2543,764)
+C16 g3b g3c 10p                                   ; C16 10pf p96 ~(2632,771)
+C17 g3c g3d 10p                                   ; C17 10pf p96 ~(2825,921)
+* ---- load termination at n4 (transformed load R) ----
+C21 n4 0 1000p                                    ; C21 1000pf p96 ~(3086,1179)
+R32s n4 0 {rev5 ? 182k : 1e12}                                    ; R32 182K 1% (dotted, rev5; shunt) p96 ~(3246,1200)
+* ---- U5 buffer ----
+R32a n4 u5_p {rev5 ? 4.7k : 1m}                                 ; "R32 4.7K" (dotted, rev5; series into U5 pin3 -- DUPLICATE refdes on drawing) p96 ~(3186,450)
+XU5 u5_p u5_n u5_o OPAMP                          ; U5 LF356 (+3 -2 out6) p96 ~(3329,493)
+R33 u5_o u5_n 4.99k                                ; R33 4.7K p96 ~(3329,625) [224X value per p95 table; drawn 4.7k]
+R100 u5_n 0 {rev5 ? 4.99k : 1e12}                                 ; R100 4.99K 1% (dotted, rev5) p96 ~(3232,729)
+* ---- U6A pre-emphasis (inverting shelf) ----
+R34 u5_o pe_a 6.98k                               ; R34 15.4K 1% p96 ~(3521,493) [224X value per p95 table; drawn 15.4k]
+R35 pe_a u6a_n 21.0k                              ; R35 33.2K 1% p96 ~(3714,493) [224X value per p95 table; drawn 33.2k]
+C29 pe_a u6a_n 2400p                              ; C29 2400pf 2.5% p96 ~(3696,382)
+R36 u6a_n u6a_o 28.0k                             ; R36 48.7K 1% p96 ~(3887,380) [224X value per p95 table; drawn 48.7k]
+R39 u6a_p 0 1m                                  ; R39 4.7K (U6A +in bias) p96 ~(3790,870) [224X: JUMPER per p95 table]
+XU6A u6a_p u6a_n u6a_o OPAMP                      ; U6A 1/2 4558 (+3 -2 out1) p96 ~(3887,530)
+* ---- U6B aperture correction: unity-gain Sallen-Key low-pass ----
+R37 u6a_o sk_a 10.0k                              ; R37 15.0K 1% p96 ~(4060,530) [224X value per p95 table; drawn 15.0k]
+R38 sk_a u6b_p 10.0k                              ; R38 15.0K 1% p96 ~(4200,530) [224X value per p95 table; drawn 15.0k]
+C25 sk_a out 2200p                                ; C25 2200pf 2.5% (to U6B out/-in) p96 ~(4123,430)
+C26 u6b_p 0 240p                                  ; C26 240pf 2.5% p96 ~(4270,737)
+XU6B u6b_p out out OPAMP                          ; U6B 1/2 4558 (+5, -6 tied to out7) p96 ~(4360,483)
+* out = "+13 dBm TO INPUT MUX"
+
+.ac dec 400 20 100k
+.control
+run
+let db_out = vdb(out)
+meas ac g1k  find vdb(out) at=1k
+meas ac g10k find vdb(out) at=10k
+meas ac g12k find vdb(out) at=12k
+meas ac g15k find vdb(out) at=15k
+meas ac gpre2k find vdb(u6a_o) at=2k
+meas ac gpre8k find vdb(u6a_o) at=8k
+meas ac gpre100 find vdb(u6a_o) at=100
+meas ac gflt1k find vdb(n4) at=1k
+wrdata ain_224x.txt vdb(out) vdb(n4) vdb(u6a_o)
+.endc
+.end

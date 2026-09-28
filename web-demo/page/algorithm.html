@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCS Program Flow</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1d1d1b; --muted: #77746c; --rule: #e2ded4; --panel: #f3f0e8;
+    --focus: #ffe9a8;
+    --register: #2f6fdb; --shift: #1a9a8f; --product: #d9731a; --result: #8a4fc9; --memory: #2f9e44;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17171a; --fg: #e8e6e1; --muted: #9a978f; --rule: #2e2e33; --panel: #202025;
+      --focus: #5a4a12;
+      --register: #6ea0ff; --shift: #45c8bb; --product: #ff9d4d; --result: #b98cf0; --memory: #5fd07a;
+    }
+  }
+  body { background: var(--bg); color: var(--fg); font: 15px/1.45 system-ui, sans-serif; margin: 0 16px 40px; }
+  h1 { font-size: 1.35em; margin: 0.8em 0 0.2em; }
+  p.lede { color: var(--muted); max-width: 60em; margin-top: 0; }
+  #summary { font-family: ui-monospace, monospace; font-size: 0.9em; margin: 0.6em 0; }
+  #layout { display: flex; gap: 20px; align-items: flex-start; }
+  #listingWrap { position: relative; flex: 1 1 auto; min-width: 0; overflow-x: auto; }
+  #gutter { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+  table { border-collapse: collapse; font: 12.5px/1.25 ui-monospace, monospace; }
+  #listing { margin-left: 110px; }
+  #listing td, #listing th { padding: 1px 8px; white-space: nowrap; border-bottom: 1px solid var(--rule); }
+  #listing th { text-align: left; color: var(--muted); font-weight: normal; position: sticky; top: 0; background: var(--bg); }
+  #listing tr.row { cursor: default; }
+  #listing tr.row:hover td { background: var(--panel); }
+  #listing td.num { text-align: right; color: var(--muted); }
+  #listing td.does { color: var(--fg); }
+  #listing tr.quiet td { color: var(--muted); opacity: 0.55; }
+  #listing .dead { text-decoration: line-through; opacity: 0.6; }
+  tr.focus td { background: var(--focus) !important; }
+  tr.from td:first-child, tr.to td:first-child { font-weight: bold; }
+  tr.from-register td { box-shadow: inset 4px 0 var(--register); }
+  tr.from-shift td { box-shadow: inset 4px 0 var(--shift); }
+  tr.from-product td { box-shadow: inset 4px 0 var(--product); }
+  tr.from-result td { box-shadow: inset 4px 0 var(--result); }
+  tr.from-memory td { box-shadow: inset 4px 0 var(--memory); }
+  tr.to td { box-shadow: inset -4px 0 var(--muted); }
+  tr.from td:first-child { background: color-mix(in srgb, var(--panel) 60%, transparent); }
+  #side { flex: 0 0 360px; position: sticky; top: 8px; max-height: calc(100vh - 16px); overflow-y: auto; }
+  .card { background: var(--panel); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
+  .card h2 { font-size: 1em; margin: 0 0 6px; }
+  #explain p { margin: 0.25em 0; }
+  #explain .muted, .muted { color: var(--muted); }
+  .kind { font-weight: 600; }
+  .k-register { color: var(--register); } .k-shift { color: var(--shift); } .k-product { color: var(--product); }
+  .k-result { color: var(--result); } .k-memory { color: var(--memory); }
+  #lines td, #lines th { padding: 1px 6px; text-align: left; vertical-align: top; }
+  #lines td:first-child { white-space: nowrap; }
+  #lines tr:hover td { background: var(--bg); }
+  #lines tr.lit td { background: var(--focus); }
+  #lines .tap { display: inline-block; margin-right: 8px; }
+  .legend span { margin-right: 10px; white-space: nowrap; }
+  #listing tr.block-start td { border-top: 2px solid var(--muted); }
+  #listing td.blockname { color: var(--muted); font-family: system-ui, sans-serif; }
+  #diagramCard { margin: 8px 0 14px; }
+  #diagram { width: 100%; height: auto; display: block; }
+  #diagram .node rect { fill: var(--bg); stroke: var(--muted); stroke-width: 1.2; }
+  #diagram .node.lit rect { fill: var(--focus); }
+  #diagram .node { cursor: default; }
+  #diagram .node-name { fill: var(--fg); font: 600 14px system-ui, sans-serif; }
+  #diagram .node-sub { fill: var(--muted); font: 11px ui-monospace, monospace; }
+  #diagram .edge { stroke-opacity: 0.45; cursor: default; }
+  #diagram .edge:hover, #diagram .edge.lit { stroke-opacity: 1; }
+  #diagram:has(.edge.lit) .edge:not(.lit) { stroke-opacity: 0.12; }
+  #blocks, #features { list-style: none; padding: 0; margin: 4px 0 8px; }
+  #blocks li, #features li { padding: 1px 4px; border-radius: 4px; cursor: default; }
+  #blocks li:hover, #features li:hover { background: var(--bg); }
+  li.lit { background: var(--focus) !important; }
+  #annotationAbout { font-size: 0.85em; }
+  @media (max-width: 900px) {
+    #layout { flex-direction: column; }
+    #side { position: static; flex: none; width: 100%; max-height: none; }
+  }
+</style>
+</head>
+<body>
+<h1>WCS program flow</h1>
+<p class="lede">One 224X/224XL or original 224 program, row by row, and how values move between its rows:
+from delay memory into a register, into a multiply, through the accumulator into RR, and
+back into delay memory or out to the DAC. Hover a row (click to pin) to see where its values
+come from and where they go. The program is read in your browser; nothing is uploaded.</p>
+<p>Machine: <select id="model"><option value="0">224X / 224XL</option><option value="1">original 224</option></select>
+  Program: <input type="file" id="file" accept=".bin,.hex,.txt">
+  <span class="muted">a 512-byte WCS image, or a hex WCS dump (<code>4000: 02 21 …</code>)</span></p>
+<div id="summary" class="muted">no program loaded</div>
+<div class="card" id="diagramCard" hidden>
+  <h2>Blocks, and the delay lines between them</h2>
+  <svg id="diagram"></svg>
+  <div class="muted">Arrows go from the block that stores to the block that reads, as thick as the
+  number of taps. Hover a block or an arrow.</div>
+</div>
+<div id="layout">
+  <div id="listingWrap">
+    <svg id="gutter" width="110"></svg>
+    <table id="listing"></table>
+  </div>
+  <div id="side">
+    <div class="card"><h2>Focus</h2><div id="explain" class="muted">Hover a row.</div></div>
+    <div class="card"><h2>Links</h2><div class="legend">
+      <span class="kind k-register">register</span>a row's bus value, multiplied later<br>
+      <span class="kind k-shift">shift</span>a keep-shifting row continues a multiplicand<br>
+      <span class="kind k-product">product</span>a product, part of a sum XFER saves<br>
+      <span class="kind k-result">result</span>RR saved by XFER, stored or sent out<br>
+      <span class="kind k-memory">memory</span>a delay line: stored, read back later<br>
+      <span class="muted">Dashed: from an earlier pass (sample).</span>
+    </div></div>
+    <div class="card" id="blocksCard" hidden><h2 id="annotationTitle"></h2>
+      <p id="annotationAbout" class="muted"></p>
+      <b>Blocks</b><ul id="blocks"></ul>
+      <b>Named rows</b><ul id="features"></ul>
+    </div>
+    <div class="card"><h2>Delay lines</h2><table id="lines"></table></div>
+  </div>
+</div>
+<script type="module" src="algorithm.js"></script>
+</body>
+</html>

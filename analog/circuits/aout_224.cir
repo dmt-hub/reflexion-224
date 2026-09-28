@@ -1,0 +1,115 @@
+* aout_224.cir -- *** MODEL 224 BUILD (as drawn) ***: pass B's transcription (transcription/passB_aout.cir),
+*   trims set by tools/solve_trims.py to the drawing's nulls. Values checked against the 224's own
+*   board drawing (224 service manual schematics, part I p10 / part II p3) and a second
+*   independent transcription.
+* passB_aout.cir -- Lexicon 224/224X Analog OUTPUT board, top channel of p98
+* Source: p98 = "SCHEMATIC, ANALOG OUTPUT BD., 224" dwg 060-01322-D sheet 3 of 3, rev 6.
+*   NOTE: the top channel of p98 is labelled "CHAN 3" (output J1-23). p99 (sheet 2 of 3) carries
+*   CHAN A / CHAN B with identical topology and identical drawn values (different refdes).
+*   The caller's "channel A (top half of p98)" = this CHAN 3 circuit.
+* VALUES AS DRAWN = MODEL 224 values. 224X substitutions: p100 "FOR 224X VERSION ONLY" table
+*   -> passB_aout_224x.cir
+* Path: FROM OUTPUT S&H (p100 U7A "CHAN 3", CA3240 follower) -> U21A de-emphasis (inverting)
+*   -> 7-pole elliptic FDNR ladder (U17,U18,U19) -> C87 load term. -> U20A buffer -> C121/C122
+*   (22uF back-to-back) -> R139 50K level pot -> U27 LF356 inverting + MJE180/MJE170 follower
+*   inside the loop -> "out" = J1-23 (to output transformer on audio I/O board; transformer not incl.)
+* Coordinates ~(x,y) are full-resolution page pixels.
+
+.subckt OPAMP inp inn out
+E1 out 0 inp inn 1e6
+.ends
+
+.param f_r69=0.4254   ; R69 5K trim (rheostat, wiper to R74 end) -- 224: null 11.815 kHz
+.param f_r75=0.4467   ; R75 5K trim -- 224: null 10.2398 kHz
+.param f_r81=0.4845   ; R81 5K trim -- 224: null 19.1204 kHz
+.param k_r139=0.5   ; R139 50K output level pot, wiper fraction measured from bottom (R140 end); CW = toward top (C122/TP end)
+
+Vin in 0 AC 1                                     ; "FROM OUTPUT S&H" p98 ~(560,475)
+* ---- U21A de-emphasis ----
+R95 in u21_n 48.7k                                ; R95 48.7K,1% p98 ~(821,475)
+R96 u21_n de_f 33.2k                              ; R96 33.2K,1% p98 ~(982,371)
+C91 u21_n de_f 2400p                              ; C91 2400pf,2.5% p98 ~(979,286)
+R97 de_f u21_o 15.4k                              ; R97 15.4K,1% p98 ~(1136,371)
+R93 u21_p 0 4.7k                                  ; R93 4.7K (U21A +in bias) p98 ~(904,657)
+XU21A u21_p u21_n u21_o OPAMP                     ; U21A 1/2 4558 (+3 -2 out1) p98 ~(1007,514)
+* ---- ladder series arms ----
+R70 u21_o n1 23.7k                                ; R70 23.7K,1% p98 ~(1336,512)
+R76 n1 n2 22.6k                                   ; R76 22.6K,1% p98 ~(1671,509)
+R82 n2 n3 22.6k                                   ; R82 22.6K,1% p98 ~(2246,503)
+R87 n3 n4 10.5k                                   ; R87 10.5K,1% p98 ~(2692,499)
+* ---- shunt 1 at n1: R71 + GIC (U17) ----
+R71 n1 g1a 7.68k                                  ; R71 7.68K,1% p98 ~(1457,573)
+C69 g1a g1b 1000p                                 ; C69 1000pf p98 ~(1457,687)
+R72 g1b g1c 10k                                   ; R72 10K,1% p98 ~(1457,794)
+R73 g1c g1d 10k                                   ; R73 10K,1% p98 ~(1464,966)
+R74 g1d g1t 21.5k                                 ; R74 21.5K,1% p98 ~(1464,1137)
+R69 g1t g1e {5k*f_r69+1m}                         ; R69 5K trim p98 ~(1464,1294)
+C72 g1e 0 1000p                                   ; C72 1000pf p98 ~(1468,1409)
+XU17A g1a g1c g1d OPAMP                           ; U17A 1/2 4558 (+3 -2 out1) p98 ~(1607,894)
+XU17B g1e g1c g1b OPAMP                           ; U17B 1/2 4558 (+5 -6 out7) p98 ~(1207,880)
+C70 g1b g1c 10p                                   ; C70 10pf p98 ~(1393,809)
+C71 g1c g1d 10p                                   ; C71 10pf p98 ~(1364,994)
+* ---- shunt 2 at n2: R77 + GIC (U18) ----
+R77 n2 g2a 13.7k                                  ; R77 13.7K,1% p98 ~(2015,572)
+C75 g2a g2b 1000p                                 ; C75 1000pf p98 ~(2015,680)
+R78 g2b g2c 10k                                   ; R78 10K,1% p98 ~(2015,772)
+R79 g2c g2d 10k                                   ; R79 10K,1% p98 ~(2015,965)
+R80 g2d g2t 15.4k                                 ; R80 15.4K,1% p98 ~(2015,1142)
+R75 g2t g2e {5k*f_r75+1m}                         ; R75 5K trim p98 ~(2023,1280)
+C78 g2e 0 1000p                                   ; C78 1000pf p98 ~(2027,1403)
+XU18A g2a g2c g2d OPAMP                           ; U18A 1/2 4558 (+3 -2 out1) p98 ~(2162,903)
+XU18B g2e g2c g2b OPAMP                           ; U18B 1/2 4558 (+5 -6 out7) p98 ~(1762,872)
+C76 g2b g2c 10p                                   ; C76 10pf p98 ~(1946,795)
+C77 g2c g2d 10p                                   ; C77 10pf p98 ~(1923,988)
+* ---- shunt 3 at n3: R83 + GIC (U19) ----
+R83 n3 g3a 3.09k                                  ; R83 3.09K,1% p98 ~(2573,572)
+C81 g3a g3b 1000p                                 ; C81 1000pf p98 ~(2573,680)
+R84 g3b g3c 10k                                   ; R84 10K,1% p98 ~(2573,772)
+R85 g3c g3d 10k                                   ; R85 10K,1% p98 ~(2573,965)
+R86 g3d g3t 20.0k                                 ; R86 20.0K,1% p98 ~(2573,1134)
+R81 g3t g3e {5k*f_r81+1m}                         ; R81 5K trim p98 ~(2577,1272)
+C84 g3e 0 1000p                                   ; C84 1000pf p98 ~(2577,1380)
+XU19A g3a g3c g3d OPAMP                           ; U19A 1/2 4558 (+3 -2 out1) p98 ~(2715,903)
+XU19B g3e g3c g3b OPAMP                           ; U19B 1/2 4558 (drawn "+6" "-5"(sic), out7) p98 ~(2315,872)
+C82 g3b g3c 10p                                   ; C82 10pf p98 ~(2504,788)
+C83 g3c g3d 10p                                   ; C83 10pf p98 ~(2477,980)
+* ---- load termination + buffer ----
+C87 n4 0 1000p                                    ; C87 1000pf p98 ~(2830,747)
+R88 n4 u20_p 4.7k                                 ; R88 4.7K p98 ~(2907,493)
+XU20A u20_p u20_o u20_o OPAMP                     ; U20A 1/2 4558 (+3, -2 via R89 to out1) p98 ~(3037,540)
+R89 u20_o u20_n 4.7k                              ; R89 4.7K (out1 -> -in2; no current in ideal model) p98 ~(3040,667)
+Rdum u20_n 0 1e12                                 ; (sim-only: keeps u20_n node defined; -in modeled tied to out)
+C121 u20_o cc_m 22u                               ; C121 22uf,16V (+ toward U20) p98 ~(3190,533)
+C122 pot_t cc_m 22u                               ; C122 22uf,16V (+ toward pot) p98 ~(3253,533)
+* ---- output level pot + U27 stage ----
+R139a pot_t pot_w {50k*(1-k_r139)+1m}             ; R139 50K (upper part; TP at pot_t "+3-13 dbm") p98 ~(3303,613)
+R139b pot_w pot_b {50k*k_r139+1m}                 ; R139 50K (lower part) p98 ~(3303,613)
+R140 pot_b 0 24k                                  ; R140 24K p98 ~(3240,1080)
+R142 pot_w u27_n 33k                              ; R142 33K p98 ~(3410,573)
+R145 out u27_n 47k                                ; R145 47K (overall feedback from output node) p98 ~(3564,574)
+R141 u27_p 0 4.7k                                 ; R141 4.7K p98 ~(3476,1098)
+XU27 u27_p u27_n u27_o OPAMP                      ; U27 LF356 (+3 -2 out6) p98 ~(3572,954)
+* complementary follower Q5 (MJE180, coll +15) / Q6 (MJE170, coll -15), biased by R143/CR11/CR12/R144;
+* small-signal model: both emitters follow U27 out (diode drops cancel), each through its 33 ohm
+Eq5 e5 0 u27_o 0 1                                ; Q5 MJE180 (emitter follower, modeled) p98 ~(3820,698)
+Eq6 e6 0 u27_o 0 1                                ; Q6 MJE170 (emitter follower, modeled) p98 ~(3828,1178)
+R147 e5 out 33                                    ; R147 33 ohm 1/2W p98 ~(3856,858)
+R146 e6 out 33                                    ; R146 33 ohm 1/2W p98 ~(3856,1026)
+* R143 1.5K (+15 -> Q5 base), CR11, CR12, R144 1.5K,1/4W (Q6 base -> -15): bias only, omitted p98 ~(3716,738..1130)
+R148 out zob 200                                  ; R148 200 ohm 1/4W p98 ~(4040,1058)
+C125 zob 0 0.01u                                  ; C125 .01uf,100V (to J1-21,19 return) p98 ~(4040,1250)
+* out = J1-23
+
+.ac dec 400 20 100k
+.control
+run
+meas ac g1k  find vdb(out) at=1k
+meas ac g10k find vdb(out) at=10k
+meas ac g12k find vdb(out) at=12k
+meas ac g15k find vdb(out) at=15k
+meas ac de2k find vdb(u21_o) at=2k
+meas ac de8k find vdb(u21_o) at=8k
+meas ac de100 find vdb(u21_o) at=100
+wrdata aout_224.txt vdb(out) vdb(n4) vdb(u21_o)
+.endc
+.end

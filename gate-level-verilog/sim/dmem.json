@@ -1,0 +1,6 @@
+{
+  "note": "Simulation only. The DMEM board's ground net carries the backplane name FPC DBUG (the drawing grounds backplane pin 15); the simulation holds it at 0.",
+  "tie_nets": {
+    "FPC DBUG": "1'b0"
+  }
+}

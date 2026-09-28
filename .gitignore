@@ -1,10 +1,17 @@
-# Your own firmware: never commit it.
+# Your own firmware and captures: never commit them.
 /firmware/
 /captures/
 
 # Build output
 build/
-/web-demo/page/lexicon224x.js
-/web-demo/page/lexicon224x.wasm
+out/
+reports/
 __pycache__/
 .DS_Store
+/web-demo/page/lexicon224x.js
+/web-demo/page/lexicon224x.wasm
+/juce-plugin/build*/
+
+# make check's list of skipped targets
+/.make-skipped
+/8080/refs/

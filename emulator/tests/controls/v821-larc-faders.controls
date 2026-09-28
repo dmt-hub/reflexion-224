@@ -1,0 +1,16 @@
+# 224XL v8.21: boots to CONCERT HALL B1 P1 V1 on the LARC by ~30M cycles.
+# Input pulse, then all six LARC faders (the XL compiles each move into WCS
+# writes), then more pulses while the new settings run.
+30500000 audio 512 0 0 0
+30504096 audio 0 0 0 0
+31000000 fader 0 40
+31200000 fader 1 200
+31400000 fader 2 10
+31600000 fader 3 240
+31800000 fader 4 90
+32000000 fader 5 170
+32500000 audio 0 0 3712 0
+32504096 audio 0 0 0 0
+33000000 fader 0 220
+33300000 audio 1024 1 1024 1
+33312288 audio 0 0 0 0

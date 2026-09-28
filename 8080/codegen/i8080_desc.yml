@@ -1,0 +1,337 @@
+# 8080 instruction descriptions, read by i8080_gen.py.
+#
+# Source: Intel 8080 Microcomputer Systems User's Manual (1975), Table 2-2
+# "Instruction Execution", pages 2-16 to 2-20 (PDF pages 30-34), with its
+# notes. Each entry follows that table's columns. The opcode fetch (M1 T1-T3)
+# is shared and written by hand in i8080.h; an entry describes what comes
+# after it:
+#
+#   t4, t5    M1's T4 (always there) and T5 (only if the key is present)
+#   mcycles   M2, M3, ... each one of:
+#     mread / sread / ioread     { ab, dst, action }  memory, stack or input read
+#                                T1 address + status, T2 DBIN, T3 data in (+ action)
+#     mwrite / swrite / iowrite  { ab, db, action }   memory, stack or output write
+#                                T1 address + status, T2 data out, T3 WR/ (+ action)
+#     internal                   { states: [...] }    one state per entry, no bus cycle
+#     halt                       { }                  T1 halt status, T2, then TWH
+#     any of them may add t4 / t5 states after T3 (only XTHL's M5 does)
+#
+# `ab: $PC++` puts PC on the address bus at T1 and increments it at T2, as
+# Table 2-2 shows ("PC = PC + 1" in the T2 column). `$SP++`, `$SP--` and
+# `$WZ++` likewise.
+#
+# Note 9: arithmetic, logic and rotate results are not written in the
+# instruction's own states. The instruction leaves the operation in
+# `cpu->alu` (with its operands in ACT and TMP), and T2 of the next fetch
+# carries it out. That is `cpu->alu=$ALU` below.
+#
+# Several instructions end with Table 2-2 saying the *next* fetch puts WZ
+# out and sets PC = WZ + 1 in its T2 (note 11). Setting PC = WZ at the end
+# of the instruction gives the same pins and the same PC; the entries do that.
+#
+# Opcode fields for `cond`: op (the byte), x = bits 7-6, y = bits 5-3,
+# z = bits 2-0, p = y >> 1, q = y & 1. Register codes (p. 2-20):
+# SSS/DDD  B=0 C=1 D=2 E=3 H=4 L=5 M=6 A=7;  rp  B=0 D=1 H=2 SP=3.
+# Placeholders: $RY = DDD register, $RZ = SSS register, $RP/$RPL/$RPH = rp
+# and its low/high byte, $RP2... = the same with PSW for SP, $CC = the
+# condition CCC = y, $ALU = the ALU operation y, $ROT = the rotate y & 3,
+# $Y*8 = the RST address; registers $PC $SP $HL $DE $WZ $W $Z $H $L $A $F
+# $TMP $ACT.
+
+#== Data transfer ==============================================================
+
+MOV $RY,$RZ:
+  cond: x == 1 and y != 6 and z != 6
+  t4: $TMP=$RZ
+  t5: $RY=$TMP
+
+MOV $RY,M:
+  cond: x == 1 and y != 6 and z == 6
+  mcycles:
+    - { type: mread, ab: $HL, dst: $RY }
+
+MOV M,$RZ:
+  cond: x == 1 and y == 6 and z != 6
+  t4: $TMP=$RZ
+  mcycles:
+    - { type: mwrite, ab: $HL, db: $TMP }
+
+MVI $RY,d8:
+  cond: x == 0 and z == 6 and y != 6
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $RY }
+
+MVI M,d8:
+  cond: op == 0x36
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $TMP }
+    - { type: mwrite, ab: $HL, db: $TMP }
+
+LXI $RP,d16:
+  cond: x == 0 and z == 1 and q == 0
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $RPL }
+    - { type: mread, ab: $PC++, dst: $RPH }
+
+LDA a16:
+  cond: op == 0x3A
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W }
+    - { type: mread, ab: $WZ, dst: $A }
+
+STA a16:
+  cond: op == 0x32
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W }
+    - { type: mwrite, ab: $WZ, db: $A }
+
+LHLD a16:
+  cond: op == 0x2A
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W }
+    - { type: mread, ab: $WZ++, dst: $L }
+    - { type: mread, ab: $WZ, dst: $H }
+
+SHLD a16:
+  cond: op == 0x22
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W }
+    - { type: mwrite, ab: $WZ++, db: $L }
+    - { type: mwrite, ab: $WZ, db: $H }
+
+# only rp = B or D (note 4); rp = H and SP are SHLD/STA and LHLD/LDA
+LDAX $RP:
+  cond: x == 0 and z == 2 and q == 1 and p < 2
+  mcycles:
+    - { type: mread, ab: $RP, dst: $A }
+
+STAX $RP:
+  cond: x == 0 and z == 2 and q == 0 and p < 2
+  mcycles:
+    - { type: mwrite, ab: $RP, db: $A }
+
+XCHG:
+  cond: op == 0xEB
+  t4: "{uint16_t t=$HL;$HL=$DE;$DE=t;}"
+
+#== Arithmetic and logic ========================================================
+
+$ALU $RZ:
+  cond: x == 2 and z != 6
+  t4: "$TMP=$RZ;$ACT=$A;cpu->alu=$ALU"
+
+$ALU M:
+  cond: x == 2 and z == 6
+  t4: "$ACT=$A;cpu->alu=$ALU"
+  mcycles:
+    - { type: mread, ab: $HL, dst: $TMP }
+
+$ALUI d8:
+  cond: x == 3 and z == 6
+  t4: "$ACT=$A;cpu->alu=$ALU"
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $TMP }
+
+# INR/DCR: T4 (DDD)->TMP and TMP+1->ALU, T5 ALU->DDD. The carry is not affected.
+INR $RY:
+  cond: x == 0 and z == 4 and y != 6
+  t4: $TMP=_i8080_inr(cpu,$RY)
+  t5: $RY=$TMP
+
+DCR $RY:
+  cond: x == 0 and z == 5 and y != 6
+  t4: $TMP=_i8080_dcr(cpu,$RY)
+  t5: $RY=$TMP
+
+INR M:
+  cond: op == 0x34
+  mcycles:
+    - { type: mread, ab: $HL, dst: $TMP, action: "$TMP=_i8080_inr(cpu,$TMP)" }
+    - { type: mwrite, ab: $HL, db: $TMP }
+
+DCR M:
+  cond: op == 0x35
+  mcycles:
+    - { type: mread, ab: $HL, dst: $TMP, action: "$TMP=_i8080_dcr(cpu,$TMP)" }
+    - { type: mwrite, ab: $HL, db: $TMP }
+
+# T4 (RP)+1, T5 ->RP
+INX $RP:
+  cond: x == 0 and z == 3 and q == 0
+  t5: $RP++
+
+DCX $RP:
+  cond: x == 0 and z == 3 and q == 1
+  t5: $RP--
+
+# Two internal machine cycles, no SYNC and no bus access (note 8):
+# M2 adds the low bytes into L, M3 the high bytes with carry into H.
+DAD $RP:
+  cond: x == 0 and z == 1 and q == 1
+  mcycles:
+    - { type: internal, states: ["$ACT=$RPL", "$TMP=$L", "_i8080_dad(cpu,&cpu->l,false)"] }
+    - { type: internal, states: ["$ACT=$RPH", "$TMP=$H", "_i8080_dad(cpu,&cpu->h,true)"] }
+
+DAA:
+  cond: op == 0x27
+  t4: _i8080_daa(cpu)
+
+$ROT:
+  cond: x == 0 and z == 7 and y < 4
+  t4: "$ACT=$A;cpu->alu=$ROT"
+
+CMA:
+  cond: op == 0x2F
+  t4: $A=~$A
+
+STC:
+  cond: op == 0x37
+  t4: $F|=I8080_CF
+
+CMC:
+  cond: op == 0x3F
+  t4: $F^=I8080_CF
+
+#== Branches ===================================================================
+
+# 0xCB is an undocumented alias.
+JMP a16:
+  cond: op == 0xC3 or op == 0xCB
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W, action: $PC=$WZ }
+
+# Table 2-2 draws "JUDGE CONDITION" across T4 and T5 without shading T5, but
+# chapter 4 (p. 4-18) gives Jcondition as 3 cycles, 10 states: M1 has 4 states.
+J$CC a16:
+  cond: x == 3 and z == 2
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W, action: "if($CC){$PC=$WZ;}" }
+
+# 0xDD, 0xED and 0xFD are undocumented aliases.
+CALL a16:
+  cond: op in (0xCD, 0xDD, 0xED, 0xFD)
+  t4: $SP--
+  t5: ""
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W }
+    - { type: swrite, ab: $SP--, db: $PCH }
+    - { type: swrite, ab: $SP, db: $PCL, action: $PC=$WZ }
+
+# Condition false: M4 and M5 are skipped (note 13), 11 states instead of 17.
+C$CC a16:
+  cond: x == 3 and z == 4
+  t4: "if($CC){$SP--;}"
+  t5: ""
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z }
+    - { type: mread, ab: $PC++, dst: $W, action: "if(!$CC){_fetch();}" }
+    - { type: swrite, ab: $SP--, db: $PCH }
+    - { type: swrite, ab: $SP, db: $PCL, action: $PC=$WZ }
+
+# 0xD9 is an undocumented alias.
+RET:
+  cond: op == 0xC9 or op == 0xD9
+  mcycles:
+    - { type: sread, ab: $SP++, dst: $Z }
+    - { type: sread, ab: $SP++, dst: $W, action: $PC=$WZ }
+
+# Condition false: M2 and M3 are skipped (note 14), 5 states instead of 11.
+R$CC:
+  cond: x == 3 and z == 0
+  t5: "if(!$CC){_fetch();}"
+  mcycles:
+    - { type: sread, ab: $SP++, dst: $Z }
+    - { type: sread, ab: $SP++, dst: $W, action: $PC=$WZ }
+
+# M1 T3 also clears W (0 -> W); M3 loads Z = 00NNN000.
+RST $Y:
+  cond: x == 3 and z == 7
+  t4: "$W=0;$SP--"
+  t5: ""
+  mcycles:
+    - { type: swrite, ab: $SP--, db: $PCH }
+    - { type: swrite, ab: $SP, db: $PCL, action: "$Z=$Y*8;$PC=$WZ" }
+
+PCHL:
+  cond: op == 0xE9
+  t5: $PC=$HL
+
+#== Stack ======================================================================
+
+PUSH $RP2:
+  cond: x == 3 and z == 5 and q == 0
+  t4: $SP--
+  t5: ""
+  mcycles:
+    - { type: swrite, ab: $SP--, db: $RP2H }
+    - { type: swrite, ab: $SP, db: $RP2L }
+
+POP $RP2:
+  cond: x == 3 and z == 1 and q == 0 and p != 3
+  mcycles:
+    - { type: sread, ab: $SP++, dst: $RP2L }
+    - { type: sread, ab: $SP++, dst: $RP2H }
+
+# The flag byte always reads S Z 0 AC 0 P 1 CY.
+POP PSW:
+  cond: op == 0xF1
+  mcycles:
+    - { type: sread, ab: $SP++, dst: $F, action: "$F=($F&0xD5)|0x02" }
+    - { type: sread, ab: $SP++, dst: $A }
+
+# Table 2-2 shows no SP change in M3 or M4, but M5 must write L back to the
+# original SP (H goes to SP+1). So SP steps back once between the two writes;
+# it is placed at M4 T2, where the other stack writes change SP.
+XTHL:
+  cond: op == 0xE3
+  mcycles:
+    - { type: sread, ab: $SP++, dst: $Z }
+    - { type: sread, ab: $SP, dst: $W }
+    - { type: swrite, ab: $SP--, db: $H }
+    - { type: swrite, ab: $SP, db: $L, t4: $HL=$WZ, t5: "" }
+
+SPHL:
+  cond: op == 0xF9
+  t5: $SP=$HL
+
+#== Input/output ===============================================================
+
+# M2 loads the port number into both Z and W, so WZ puts it on both halves
+# of the address bus (note 18).
+IN d8:
+  cond: op == 0xDB
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z, action: $W=$Z }
+    - { type: ioread, ab: $WZ, dst: $A }
+
+OUT d8:
+  cond: op == 0xD3
+  mcycles:
+    - { type: mread, ab: $PC++, dst: $Z, action: $W=$Z }
+    - { type: iowrite, ab: $WZ, db: $A }
+
+#== Control ====================================================================
+
+# 0x08, 0x10, 0x18, 0x20, 0x28, 0x30 and 0x38 are undocumented aliases.
+NOP:
+  cond: x == 0 and z == 0
+
+EI:
+  cond: op == 0xFB
+  t4: cpu->inte=true
+
+DI:
+  cond: op == 0xF3
+  t4: cpu->inte=false
+
+HLT:
+  cond: op == 0x76
+  mcycles:
+    - { type: halt }

@@ -1,0 +1,88 @@
+# The plugin for macOS (AU, VST3 and the standalone app), universal (Apple
+# silicon and Intel), ad-hoc signed. A tag v* publishes it as a prerelease;
+# a manual run only keeps the zip as a workflow artifact.
+name: Plugin
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 60
+    env:
+      JUCE_VERSION: "8.0.14"
+      JUCE_DIR: ${{ github.workspace }}/../JUCE
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache JUCE
+        id: juce
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.JUCE_DIR }}
+          key: juce-${{ env.JUCE_VERSION }}
+
+      - name: Fetch JUCE
+        if: steps.juce.outputs.cache-hit != 'true'
+        run: git clone --depth 1 --branch "$JUCE_VERSION" https://github.com/juce-framework/JUCE.git "$JUCE_DIR"
+
+      - name: Build
+        run: |
+          cmake -S juce-plugin -B juce-plugin/build -G "Unix Makefiles" \
+            -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+            -DFETCHCONTENT_SOURCE_DIR_JUCE="$JUCE_DIR"
+          cmake --build juce-plugin/build -j "$(sysctl -n hw.ncpu)" \
+            --target Reflexion224_AU Reflexion224_VST3 Reflexion224_Standalone
+
+      - name: Validate the AU
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          cp -R juce-plugin/build/Reflexion224_artefacts/Release/AU/Reflexion224.component ~/Library/Audio/Plug-Ins/Components/
+          killall -9 AudioComponentRegistrar || true
+          auval -v aufx Rf24 Rflx
+
+      - name: Package
+        run: |
+          if [ "$GITHUB_REF_TYPE" = tag ]; then version="$GITHUB_REF_NAME"; else version="dev-${GITHUB_SHA::7}"; fi
+          name="Reflexion224-$version-macOS"
+          built=juce-plugin/build/Reflexion224_artefacts/Release
+          mkdir -p "package/$name"
+          ditto "$built/AU/Reflexion224.component" "package/$name/Reflexion224.component"
+          ditto "$built/VST3/Reflexion224.vst3" "package/$name/Reflexion224.vst3"
+          ditto "$built/Standalone/Reflexion224.app" "package/$name/Reflexion224.app"
+          cp juce-plugin/scripts/macsetup_remove_quarantine.command "package/$name/"
+          (cd package && ditto -c -k --sequesterRsrc --keepParent "$name" "$name.zip" && shasum -a 256 "$name.zip" > "$name.zip.sha256")
+          cat package/*.sha256
+          echo "NAME=$name" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.NAME }}
+          path: package/${{ env.NAME }}.zip*
+
+      - name: Publish the prerelease
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          prerelease: true
+          files: |
+            package/${{ env.NAME }}.zip
+            package/${{ env.NAME }}.zip.sha256
+          fail_on_unmatched_files: true
+          body: |
+            An alpha build for testing. macOS 11 or later, Apple silicon or Intel. It contains no firmware.
+
+            The bundles are ad-hoc signed and not notarized, so macOS quarantines them after a download.
+
+            1. Unzip, then copy `Reflexion224.component` to `~/Library/Audio/Plug-Ins/Components`, `Reflexion224.vst3` to `~/Library/Audio/Plug-Ins/VST3`, and `Reflexion224.app` wherever you like.
+            2. Clear the quarantine: double-click `macsetup_remove_quarantine.command`. If macOS refuses to open it, allow it under System Settings > Privacy & Security, or run this in Terminal:
+               ```
+               xattr -cr ~/Library/Audio/Plug-Ins/Components/Reflexion224.component ~/Library/Audio/Plug-Ins/VST3/Reflexion224.vst3 /path/to/Reflexion224.app
+               ```
+            3. Restart your host or rescan its plug-ins. Open the plugin, click **Choose ROMs...** and pick the folder or `.zip` with your own Lexicon chip files. Until then it passes the audio through dry.

@@ -1,0 +1,13 @@
+# CPU cycles; panel bank 0 uses positive pressed-button masks.
+# Select PG7 diagnostic menu, then PG8 MAX DELAY, through firmware scans.
+2000000 button 0 0x40
+2120000 button 0 0
+2320000 button 0 0x80
+2570000 button 0 0
+2770000 snapshot max-delay
+# ADC codes are 12-bit two's complement; gain pins are the original 2-bit code.
+2800000 audio 512 0 0 0
+2804096 audio 0 0 0 0
+3600000 audio 0 0 3712 0
+3604096 audio 0 0 0 0
+4800000 snapshot after-audio

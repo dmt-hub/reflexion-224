@@ -1,0 +1,18 @@
+# The firmware's E8x multiply test: operands, coefficients, expected results -> out/aru_cases.memh
+# Calls 1-4 use input table 1 (sbc1 0x03CD); call 5 (coeff=63, sbc1
+# 0x03D5/0x03FD) uses input table 2 — near-full-scale products the ROM
+# expects UNCLAMPED.
+matrix = [
+    (0x15, 1, [0x5555, 0xAAAA, 0x6666, 0x9999], [0xC7FF, 0x37FF, 0xBCCC, 0x4332]),
+    (0x15, 0, [0x5555, 0xAAAA, 0x6666, 0x9999], [0x3800, 0xC800, 0x4333, 0xBCCD]),
+    (0x2A, 1, [0x5555, 0xAAAA, 0x6666, 0x9999], [0x8FFF, 0x6FFF, 0x8000, 0x7FFF]),
+    (0x2A, 0, [0x5555, 0xAAAA, 0x6666, 0x9999], [0x7000, 0x9000, 0x7FFF, 0x8000]),
+    (0x3F, 0, [0x3333, 0xCCCC, 0x3FFF, 0xC000], [0x64CE, 0x9B33, 0x7DFF, 0x8202]),
+]
+lines = []
+idx = 0
+for c6, cs, inputs, expects in matrix:
+    for f, want in zip(inputs, expects):
+        lines.append(f"{(cs<<48)|(c6<<40)|(f<<24)|(want<<8)|idx:013x}")
+        idx += 1
+open("out/aru_cases.memh","w").write("\n".join(lines) + "\n")

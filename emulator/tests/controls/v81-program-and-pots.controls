@@ -1,0 +1,19 @@
+# v8.1 after boot: select another program with a panel program button, move
+# all six panel pots (the firmware compiles each move into WCS writes), and
+# feed input pulses before, between and after the moves.
+17100000 button 0 0x02
+17220000 button 0 0
+17800000 audio 512 0 0 0
+17804096 audio 0 0 0 0
+18200000 pot 0 40
+18350000 pot 1 200
+18500000 pot 2 10
+18650000 pot 3 240
+18800000 pot 4 90
+18950000 pot 5 170
+19100000 audio 0 0 3712 0
+19104096 audio 0 0 0 0
+19500000 pot 0 220
+19600000 pot 3 30
+19700000 audio 1024 1 1024 1
+19712288 audio 0 0 0 0

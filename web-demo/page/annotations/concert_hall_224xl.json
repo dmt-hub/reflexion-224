@@ -1,0 +1,60 @@
+{
+  "title": "224XL hall algorithm: Concert Hall and Room",
+  "about": "Concert Hall (bank 1, program 1) and Room have this same shape: the same rows doing the same things, with different coefficients and delay offsets. The named rows were verified on Concert Hall. Rows are WCS rows (the program counter); program dumps number the same rows by step, 127 − row. The block anatomy and the named rows were read from the microcode and checked against this program's flow; the flow lens draws everything else from the loaded program itself.",
+  "blocks": [
+    { "id": "inL", "name": "Left input", "rows": [0, 1], "steps": "127–126",
+      "text": "The left ADC word into R0, times 26/32. Row 1 stores the RR saved by row 0's XFER, which holds the previous pass's last sum, not this input: the wiki's \"starved branch\" (row 126 in steps)." },
+    { "id": "tankL", "name": "First tank lattice", "rows": [2, 25], "steps": "125–102",
+      "text": "Delay lines and 3-row allpass cells. Row 5 stores the left input history (W122); two of the four MID-decay cells sit here." },
+    { "id": "xL", "name": "Cross-taps", "rows": [26, 28], "steps": "101–99",
+      "text": "Taps across to the other half and an RR capture." },
+    { "id": "outB", "name": "B output builder", "rows": [29, 35], "steps": "98–92",
+      "text": "Builds output B (row 31, WR_DA B, carrying the direct MID decay coefficient) and stores a damping one-pole (row 32, W95, with the signed LOW − MID coefficient)." },
+    { "id": "difL", "name": "Diffusers + tap", "rows": [36, 44], "steps": "91–83",
+      "text": "Two lattice allpass cells (the DIFFUSION control) and the left FINPDL store (row 44)." },
+    { "id": "outA", "name": "A output mixer", "rows": [45, 51], "steps": "82–76",
+      "text": "Mixes output A (row 50, WR_DA A), the main left output. Rows 47 and 48 are PREECHO taps." },
+    { "id": "inR", "name": "Right input", "rows": [52, 52], "steps": "75",
+      "text": "The right ADC word, times 26/32." },
+    { "id": "tankR", "name": "Second tank lattice", "rows": [53, 77], "steps": "74–50",
+      "text": "The mirror of the first tank. Row 56 stores the right input history (W71); the other two MID-decay cells sit here." },
+    { "id": "xR", "name": "Cross-taps", "rows": [78, 80], "steps": "49–47",
+      "text": "Taps across to the other half." },
+    { "id": "outD", "name": "D output builder", "rows": [81, 87], "steps": "46–40",
+      "text": "Builds output D (row 83, WR_DA D, carrying the direct MID decay coefficient) and stores a damping one-pole (row 84, W43, with the signed LOW − MID coefficient)." },
+    { "id": "difR", "name": "Two diffusers", "rows": [88, 94], "steps": "39–33",
+      "text": "Two lattice allpass cells (the DIFFUSION control)." },
+    { "id": "outC", "name": "C output mixer", "rows": [95, 103], "steps": "32–24",
+      "text": "Mixes output C (row 103, WR_DA C, also RESET), the main right output. Rows 99 and 100 are PREECHO taps; row 96 is the right FINPDL tap." },
+    { "id": "flush", "name": "Last row", "rows": [104, 104], "steps": "23",
+      "text": "The row after RESET: the pass's last." }
+  ],
+  "features": [
+    { "name": "Inputs, 26/32", "rows": [0, 52] },
+    { "name": "Outputs A, B, C, D", "rows": [50, 31, 103, 83],
+      "text": "A and C are the main stereo pair; B and D are auxiliary (owner's manual v8.2 fig. 2.11)." },
+    { "name": "Input histories W122, W71", "rows": [5, 56] },
+    { "name": "Damping one-poles W43, W95", "rows": [84, 32] },
+    { "name": "Diffuser cell 1 (DIFFUSION)", "rows": [36, 37, 38], "text": "Lattice allpass: tap × +12/32, store × 27/32, store × −12/32 (1 − g² ≈ 27.5/32)." },
+    { "name": "Diffuser cell 2 (DIFFUSION)", "rows": [40, 41, 42], "text": "Lattice allpass: g = 10/32, 1 − g² ≈ 28.9/32 (stored as 29/32)." },
+    { "name": "Diffuser cell 3 (DIFFUSION)", "rows": [88, 89, 90] },
+    { "name": "Diffuser cell 4 (DIFFUSION)", "rows": [92, 93, 94] },
+    { "name": "MID decay cells (common)", "rows": [8, 9, 10, 12, 13, 14, 59, 60, 61, 63, 64, 65],
+      "text": "Four 3-row allpass cells the MID DECAY control rotates (g = 13/32 here)." },
+    { "name": "MID decay, direct", "rows": [31, 83] },
+    { "name": "LOW − MID, signed (in the damping one-poles)", "rows": [32, 84] },
+    { "name": "PREECHO taps 1–4", "rows": [47, 99, 48, 100],
+      "text": "Level 0 at this setting: coefficient 0, so nothing uses the read." },
+    { "name": "FINPDL (final predelay), left and right", "rows": [44, 96],
+      "text": "The control moves these two rows' offsets: row 44 (a store) and row 96 (a tap). It relocates the early returns rather than adding new ones." },
+    { "name": "CHO modulated tap pairs", "rows": [19, 20, 70, 71],
+      "text": "Adjacent taps whose coefficients sum to 32/32: a fractional delay the firmware moves continuously (the CHO controller), so these rows change while the program runs." }
+  ],
+  "diagram": {
+    "columns": 6,
+    "nodes": {
+      "inL": [0, 0], "tankL": [1, 0], "xL": [2, 0], "outB": [3, 0], "difL": [4, 0], "outA": [5, 0],
+      "inR": [0, 1], "tankR": [1, 1], "xR": [2, 1], "outD": [3, 1], "difR": [4, 1], "outC": [5, 1]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "note": "Simulation only. On the board the analog phase-locked loop drives U40, and U40 pin 11 drives the master clock MC. The PLL is not simulated, so pin 11 is taken off MC and the testbench drives MC.",
+  "remove_nodes": [
+    {"net": "MC", "ref": "U40", "pin": "11"}
+  ]
+}

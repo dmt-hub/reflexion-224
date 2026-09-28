@@ -1,0 +1,49 @@
+$ timeline wcs-write
+STA 4123h: the CPU writes 5A into WCS row 55, lane 3, while the DSP runs.
+      0.0 ns  8080  T1  fetch at 0004 (status A2)
+    488.3 ns  8080  T2  DBIN
+    976.6 ns  8080  T3  data in: 32
+   1464.8 ns  8080  T4/T5 internal
+   1953.1 ns  8080  T1  memory read at 0005 (status 82)
+   2441.4 ns  8080  T2  DBIN
+   2929.7 ns  8080  T3  data in: 23
+   3418.0 ns  8080  T1  memory read at 0006 (status 82)
+   3906.2 ns  8080  T2  DBIN
+   4394.5 ns  8080  T3  data in: 41
+   4882.8 ns  8080  T1  memory write at 4123 (status 00)
+   5371.1 ns  8080  T2  D = 5A
+   5859.4 ns  SBC   MWTC/ falls (with WR/)
+   5859.4 ns  T&C   request: write WCS row 55, lane 3
+   5859.4 ns  8080  TW  READY was low
+   5926.7 ns  T&C   grant, at this row marker
+   6319.8 ns  T&C   commit: WCS row 55, lane 3 = 5A (the CPU's byte)
+   6321.8 ns  row   row 50: fetch displaced, an all-zero word
+   6347.7 ns  8080  TW  READY was low
+   6511.2 ns  T&C   XACK/ asserts
+   6610.3 ns  ARU   multiplicand held (its load)
+   6708.0 ns  ARU   multiplicand held (its first shift)
+   6805.6 ns  ARU   multiplicand held (its second shift)
+   6835.9 ns  8080  TW  READY was low
+   7324.2 ns  8080  T3  WR/
+   7812.5 ns  8080  T1  fetch at 0007 (status A2)
+   8300.8 ns  8080  T2  DBIN
+   8789.1 ns  8080  T3  data in: 76
+   9277.3 ns  8080  T4/T5 internal
+
+$ timeline row
+One DSP row (292.97 ns), from its marker.
+      0.0 ns  row   row 29 marker
+      0.0 ns  T&C   DPORT4 (microinstruction monitor) shows the microinstruction at the marker
+      0.0 ns  ARU   ARUCK 0
+     25.0 ns  T&C   DPORT3's history samples ARUCK 0
+     57.6 ns  row   execute: the previous row's microinstruction (register window closed)
+     82.6 ns  T&C   DPORT5 (timing monitor) visible
+     97.7 ns  ARU   ARUCK 1
+    102.2 ns  row   fetch: the microinstruction register loads the next word
+    111.2 ns  row   RESET_N follows the new microinstruction
+    122.7 ns  T&C   DPORT3's history samples ARUCK 1
+    152.3 ns  T&C   DPORT3 (arithmetic monitor) samples
+    180.3 ns  T&C   DPORT3 visible
+    195.3 ns  ARU   ARUCK 2
+    220.3 ns  T&C   DPORT3's history samples ARUCK 2
+    249.9 ns  row   FPC converter clock

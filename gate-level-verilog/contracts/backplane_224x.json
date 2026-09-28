@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "scope": "backplane_224x",
+  "diagnostic_ports": {
+    "e30_ofst_low": 0,
+    "e31_ofst_high": 1,
+    "e32_bus_test": 2,
+    "e33_status": 3,
+    "e34_control": 4,
+    "e35_monitor": 5,
+    "xreg_low": 6,
+    "xreg_high": 7
+  },
+  "dab_conventions": {
+    "firmware_write_to_dab_is_complemented": true,
+    "dab_wstb_active_low": true
+  },
+  "aru_tc_backplane": {
+    "sat_active_high": true,
+    "arucke_inverts_tc_aruck": true,
+    "m0_m1_backplane_active_low": true,
+    "csign_active_low": true,
+    "rdrreg_active_low": true,
+    "wa_ra_selects_active_low": true,
+    "note": "T&C exports ARUCK; ARU consumes ARUCKE/ through its pulled-up XOR clock path, so stitch benches invert. M0/M1 and CSIGN are active-low backplane nets, and ARU register file write/read selects are slash nets."
+  },
+  "dport_selects": {
+    "active_low": true,
+    "note": "DPORT_n selects from T&C and DMEM I/O decoders are asserted low."
+  },
+  "xreg_ingress": {
+    "cpu_data_drive_required": true,
+    "dab_facade_required_until_physical_source_found": true,
+    "physical_source_status": "not_present_in_generated_or_cropped_dmem_fpc_xreg_block",
+    "provenance_note": "600-DPI crops of DMEM sheet 1 (X register) against the KiCad trace",
+    "evidence_crops": [],
+    "note": "Generated and crop-checked DMEM XREG chips U17/U19/U37/U38 are DAB-to-DATA latches. Firmware DATA-to-DSP-DAB XREG ingress is represented as an explicit replay facade until the physical source is located."
+  },
+  "diagnostic_read_strobes": {
+    "default": {
+      "mrdc_asserted": true,
+      "iorc_asserted": true
+    },
+    "xreg_readback": {
+      "mrdc_asserted": false,
+      "iorc_asserted": true,
+      "note": "Ports 6/7 are DMEM I/O reads. Asserting MRDC/ during XREG readback can contend or suppress the high-byte DATA path in the ordered replay."
+    }
+  },
+  "dmem_xreg_latches": {
+    "U17": {
+      "clock": "WR_XREG/",
+      "data_input": "DAB[7:0]",
+      "data_output": "DATA[7:0]",
+      "output_enable": "RDL_XREG/"
+    },
+    "U19": {
+      "clock": "WR_XREG/",
+      "data_input": "DAB[15:8]",
+      "data_output": "DATA[7:0]",
+      "output_enable": "RDH_XREG/"
+    },
+    "U37": {
+      "clock": "WRL_XREG/",
+      "data_input": "DAB[7:0]",
+      "data_output": "DATA[7:0]",
+      "output_enable": "RD_XREG/ via U61"
+    },
+    "U38": {
+      "clock": "WRH_XREG/",
+      "data_input": "DAB[15:8]",
+      "data_output": "DATA[7:0]",
+      "output_enable": "RD_XREG/ via U61"
+    }
+  },
+  "ordered_replay_read_authority": {
+    "2": "firmware_shadow_bus_test",
+    "3": "structural_tc_u8_status_latch",
+    "4": "structural_tc_port4_live_decode",
+    "5": "structural_tc_u7_control_latch",
+    "6": "xreg_readback_facade_low",
+    "7": "xreg_readback_facade_high"
+  }
+}

@@ -2,8 +2,10 @@
 // (index.html, app.js) and the comparison page (compare.html, compare.js).
 //
 // The sources are a click once a period (sounds/click.flac), a single-sample
-// impulse (for measuring), silence, a 440 Hz sine, noise bursts, the
-// microphone or line in, and the visitor's own audio file (which loops). Both pages carry the same controls, by id:
+// impulse (for measuring), a riff played on an SH-101
+// (sounds/aphex-twin-tha-riff.flac, which loops), silence, a 440 Hz sine,
+// noise bursts, the microphone or line in, and the visitor's own audio file
+// (which loops). Both pages carry the same controls, by id:
 //   #source (with #fileOption), #audioFile, #period, #periodText, #level,
 //   #levelText, #muteInput, #audioStatus (where a microphone error is shown).
 //
@@ -19,6 +21,7 @@ export function createSourceState() {
     cycle: 0,          // frames into the current repeat period (#period)
     fileData: null,    // {left, right, position}: the visitor's file, at RATE
     clickData: null,   // {left, right}: sounds/click.flac, at RATE, once it has loaded
+    riffData: null,    // {left, right}: the riff, at RATE, once it has loaded (on first use)
   };
 }
 
@@ -38,6 +41,8 @@ export function inputSample(state, settings, channel, live) {
     case 'impulse': return channel === 0 && state.cycle === 0 ? own : 0;
     case 'sine': return own * Math.sin(state.phase);
     case 'noise': return state.cycle < 4800 ? own * (Math.random() * 2 - 1) : 0;   // a 100 ms burst
+    case 'riff': if (!state.riffData || state.cycle >= state.riffData.left.length) return 0;       // silent until it loads
+      return level * (channel === 0 ? state.riffData.left : state.riffData.right)[state.cycle];
     case 'file': if (!state.fileData || state.cycle >= state.fileData.left.length) return 0;       // silence after its end
       return level * (channel === 0 ? state.fileData.left : state.fileData.right)[state.cycle];
     default: return 0;
@@ -47,7 +52,7 @@ export function inputSample(state, settings, channel, live) {
 // Move on one frame. period: the repeat period in seconds (#period).
 export function advanceInput(state, period) {
   state.phase += 2 * Math.PI * 440 / RATE;
-  // The click, the impulse, the noise burst and the file start again every period.
+  // The click, the impulse, the noise burst, the riff and the file start again every period.
   state.cycle = (state.cycle + 1) % Math.max(1, Math.round(period * RATE));
 }
 
@@ -60,6 +65,7 @@ export function createInput(context) {
   let mic = null;           // {stream, source} while the microphone is the input
   let inputMuted = false;
   let lastSource = 'click';
+  let periodBeforeRiff = null;   // the repeat period to go back to when the riff stops
 
   $('audioFile').onchange = async (event) => {
     const file = event.target.files[0];
@@ -82,6 +88,23 @@ export function createInput(context) {
       console.warn('no click sound, using the impulse:', e);
     }
   })();
+  // The riff: about 1 MB, so it is fetched the first time it is chosen.
+  let riffLoading = null;
+  function loadRiff() {
+    riffLoading ??= (async () => {
+      try {
+        const response = await fetch('sounds/aphex-twin-tha-riff.flac');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const buffer = await new OfflineAudioContext(2, 1, RATE).decodeAudioData(await response.arrayBuffer());
+        state.riffData = { left: buffer.getChannelData(0), right: buffer.getChannelData(buffer.numberOfChannels > 1 ? 1 : 0) };
+      } catch (e) {
+        $('audioStatus').textContent = `no riff: ${e.message}`;
+        riffLoading = null;
+      }
+    })();
+    return riffLoading;
+  }
+
   // If the server offers a sound (serve.py --sound), it becomes the default input.
   (async () => {
     try {
@@ -152,6 +175,15 @@ export function createInput(context) {
   // The microphone (or a line input): raw, without the browser's voice processing.
   async function onSourceChange() {
     lastSource = source();
+    // The riff loops at its own length; the other sources get their period back.
+    if (source() === 'riff') {
+      periodBeforeRiff ??= +$('period').value;
+      await loadRiff();
+      if (state.riffData && source() === 'riff') setPeriod(state.riffData.left.length / RATE);
+    } else if (periodBeforeRiff !== null) {
+      if (source() !== 'file') setPeriod(periodBeforeRiff);
+      periodBeforeRiff = null;
+    }
     showPeriod();
     if (source() !== 'mic') {
       if (mic) { mic.stream.getTracks().forEach((t) => t.stop()); mic.source.disconnect(); mic = null; }

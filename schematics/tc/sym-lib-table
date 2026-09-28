@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MCM68B10")(type "KiCad")(uri "${KIPRJMOD}/Library/MCM68B10.kicad_sym")(options "")(descr ""))
+  (lib (name "AMB304")(type "KiCad")(uri "${KIPRJMOD}/Library/AMB304.kicad_sym")(options "")(descr ""))
+  (lib (name "MC4044")(type "KiCad")(uri "${KIPRJMOD}/Library/MC4044.kicad_sym")(options "")(descr ""))
+)

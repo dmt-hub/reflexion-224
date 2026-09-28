@@ -1,0 +1,1593 @@
+pdf_page	manual_page	table	chip	pin	signature	alternative	note
+63	5-21	ARU no feedback	U2	1	-		
+63	5-21	ARU no feedback	U2	2	-		
+63	5-21	ARU no feedback	U2	3	-		
+63	5-21	ARU no feedback	U2	4	-		
+63	5-21	ARU no feedback	U2	5	9A95		
+63	5-21	ARU no feedback	U2	6	C356		
+63	5-21	ARU no feedback	U2	7	0000		
+63	5-21	ARU no feedback	U2	8	9124		
+63	5-21	ARU no feedback	U2	9	C8P7		
+63	5-21	ARU no feedback	U2	10	9A95		
+63	5-21	ARU no feedback	U2	11	C356		
+63	5-21	ARU no feedback	U2	12	9A95		
+63	5-21	ARU no feedback	U2	13	C356		
+63	5-21	ARU no feedback	U2	14	29F3		
+63	5-21	ARU no feedback	U3	1	29F3		
+63	5-21	ARU no feedback	U3	2	F494		
+63	5-21	ARU no feedback	U3	3	0000		
+63	5-21	ARU no feedback	U3	4	0000		
+63	5-21	ARU no feedback	U3	5	-		
+63	5-21	ARU no feedback	U3	6	-		
+63	5-21	ARU no feedback	U3	7	-		
+63	5-21	ARU no feedback	U3	8	0000		
+63	5-21	ARU no feedback	U3	9	29F3		
+63	5-21	ARU no feedback	U3	10	8FC4		
+63	5-21	ARU no feedback	U3	11	0000		
+63	5-21	ARU no feedback	U3	12	-		
+63	5-21	ARU no feedback	U3	13	-		
+63	5-21	ARU no feedback	U3	14	0C0P		
+63	5-21	ARU no feedback	U3	15	C77H		
+63	5-21	ARU no feedback	U3	16	29F3		
+63	5-21	ARU no feedback	U4	1	29F3		
+63	5-21	ARU no feedback	U4	2	U69F		
+63	5-21	ARU no feedback	U4	3	46PU		
+63	5-21	ARU no feedback	U4	4	0000		
+63	5-21	ARU no feedback	U4	5	-		
+63	5-21	ARU no feedback	U4	6	-		
+63	5-21	ARU no feedback	U4	7	-		
+63	5-21	ARU no feedback	U4	8	0000		
+63	5-21	ARU no feedback	U4	9	29F3		
+63	5-21	ARU no feedback	U4	10	8FC4		
+63	5-21	ARU no feedback	U4	11	0000		
+63	5-21	ARU no feedback	U4	12	-		
+63	5-21	ARU no feedback	U4	13	-		
+63	5-21	ARU no feedback	U4	14	8653		
+63	5-21	ARU no feedback	U4	15	8575		
+63	5-21	ARU no feedback	U4	16	29F3		
+63	5-21	ARU no feedback	U5	1	3H61		
+63	5-21	ARU no feedback	U5	2	9A95		
+63	5-21	ARU no feedback	U5	3	A7U4		
+63	5-21	ARU no feedback	U5	4	9A4H		
+63	5-21	ARU no feedback	U5	5	9A95		
+63	5-21	ARU no feedback	U5	6	00H8		
+63	5-21	ARU no feedback	U5	7	0000		
+63	5-21	ARU no feedback	U5	8	FHPF		
+63	5-21	ARU no feedback	U5	9	5779		
+63	5-21	ARU no feedback	U5	10	9A95		
+63	5-21	ARU no feedback	U5	11	7F95		
+63	5-21	ARU no feedback	U5	12	P600		
+63	5-21	ARU no feedback	U5	13	9A95		
+63	5-21	ARU no feedback	U5	14	29F3		
+63	5-21	ARU no feedback	U6	1	91A4		
+63	5-21	ARU no feedback	U6	2	9A95		
+63	5-21	ARU no feedback	U6	3	0C31		
+63	5-21	ARU no feedback	U6	4	HF27		
+63	5-21	ARU no feedback	U6	5	9A95		
+63	5-21	ARU no feedback	U6	6	46C2		
+63	5-21	ARU no feedback	U6	7	0000		
+63	5-21	ARU no feedback	U6	8	9065		
+63	5-21	ARU no feedback	U6	9	0AU0		
+63	5-21	ARU no feedback	U6	10	9A95		
+63	5-21	ARU no feedback	U6	11	2516		
+63	5-21	ARU no feedback	U6	12	CU83		
+63	5-21	ARU no feedback	U6	13	9A95		
+63	5-21	ARU no feedback	U6	14	29F3		
+63	5-21	ARU no feedback	U7	1	697U		
+63	5-21	ARU no feedback	U7	2	9A95		
+63	5-21	ARU no feedback	U7	3	U3PA		
+63	5-21	ARU no feedback	U7	4	7U69		
+63	5-21	ARU no feedback	U7	5	9A95		
+63	5-21	ARU no feedback	U7	6	P5UF		
+63	5-21	ARU no feedback	U7	7	0000		
+63	5-21	ARU no feedback	U7	8	F65H		
+63	5-21	ARU no feedback	U7	9	5FF8		
+63	5-21	ARU no feedback	U7	10	9A95		
+63	5-21	ARU no feedback	U7	11	7724		
+63	5-21	ARU no feedback	U7	12	PHC1		
+63	5-21	ARU no feedback	U7	13	9A95		
+63	5-21	ARU no feedback	U7	14	29F3		
+63	5-21	ARU no feedback	U8	1	9A15		
+63	5-21	ARU no feedback	U8	2	9A95		
+63	5-21	ARU no feedback	U8	3	0080		
+63	5-21	ARU no feedback	U8	4	H39H		
+63	5-21	ARU no feedback	U8	5	9A95		
+63	5-21	ARU no feedback	U8	6	4908		
+63	5-21	ARU no feedback	U8	7	0000		
+63	5-21	ARU no feedback	U8	8	1PH4		
+63	5-21	ARU no feedback	U8	9	8441		
+63	5-21	ARU no feedback	U8	10	9A95		
+63	5-21	ARU no feedback	U8	11	HAP5		
+63	5-21	ARU no feedback	U8	12	4070		
+63	5-21	ARU no feedback	U8	13	9A95		
+63	5-21	ARU no feedback	U8	14	29F3		
+63	5-21	ARU no feedback	U9	1	A175		
+63	5-21	ARU no feedback	U9	2	9A95		
+63	5-21	ARU no feedback	U9	3	3CP0		
+63	5-21	ARU no feedback	U9	4	6750		
+63	5-21	ARU no feedback	U9	5	9A95		
+63	5-21	ARU no feedback	U9	6	UHF5		
+63	5-21	ARU no feedback	U9	7	0000		
+63	5-21	ARU no feedback	U9	8	C8P7		
+63	5-21	ARU no feedback	U9	9	2272		
+63	5-21	ARU no feedback	U9	10	9A95		
+63	5-21	ARU no feedback	U9	11	C8P7		
+63	5-21	ARU no feedback	U9	12	2272		
+63	5-21	ARU no feedback	U9	13	9A95		
+63	5-21	ARU no feedback	U9	14	29F3		
+64	5-22	ARU no feedback	U10	1	0000		
+64	5-22	ARU no feedback	U10	2	2272		
+64	5-22	ARU no feedback	U10	3	3PA1		
+64	5-22	ARU no feedback	U10	4	3PA1		
+64	5-22	ARU no feedback	U10	5	2272		
+64	5-22	ARU no feedback	U10	6	6750		
+64	5-22	ARU no feedback	U10	7	C4P4		
+64	5-22	ARU no feedback	U10	8	38AU		
+64	5-22	ARU no feedback	U10	9	A175		
+64	5-22	ARU no feedback	U10	10	0000		
+64	5-22	ARU no feedback	U10	11	0000		
+64	5-22	ARU no feedback	U10	12	4070		
+64	5-22	ARU no feedback	U10	13	UAA5		
+64	5-22	ARU no feedback	U10	14	72F6		
+64	5-22	ARU no feedback	U10	15	8441		
+64	5-22	ARU no feedback	U10	16	H39H		
+64	5-22	ARU no feedback	U10	17	HH7P		
+64	5-22	ARU no feedback	U10	18	4P6P		
+64	5-22	ARU no feedback	U10	19	9A15		
+64	5-22	ARU no feedback	U10	20	29F3		
+64	5-22	ARU no feedback	U11	1	0000		
+64	5-22	ARU no feedback	U11	2	PHC1		
+64	5-22	ARU no feedback	U11	3	A127		
+64	5-22	ARU no feedback	U11	4	F3H4		
+64	5-22	ARU no feedback	U11	5	5FF8		
+64	5-22	ARU no feedback	U11	6	7U69		
+64	5-22	ARU no feedback	U11	7	8497		
+64	5-22	ARU no feedback	U11	8	A8CC		
+64	5-22	ARU no feedback	U11	9	697U		
+64	5-22	ARU no feedback	U11	10	0000		
+64	5-22	ARU no feedback	U11	11	0000		
+64	5-22	ARU no feedback	U11	12	CU83		
+64	5-22	ARU no feedback	U11	13	0543		
+64	5-22	ARU no feedback	U11	14	6UA4		
+64	5-22	ARU no feedback	U11	15	0AU0		
+64	5-22	ARU no feedback	U11	16	HF27		
+64	5-22	ARU no feedback	U11	17	F20A		
+64	5-22	ARU no feedback	U11	18	590F		
+64	5-22	ARU no feedback	U11	19	91A4		
+64	5-22	ARU no feedback	U11	20	29F3		
+64	5-22	ARU no feedback	U12	1	29F3		
+64	5-22	ARU no feedback	U12	2	P600		
+64	5-22	ARU no feedback	U12	3	-		
+64	5-22	ARU no feedback	U12	4	C645		
+64	5-22	ARU no feedback	U12	5	H4C6		
+64	5-22	ARU no feedback	U12	6	-		
+64	5-22	ARU no feedback	U12	7	5779		
+64	5-22	ARU no feedback	U12	8	0000		
+64	5-22	ARU no feedback	U12	9	0000		
+64	5-22	ARU no feedback	U12	10	9A4H		
+64	5-22	ARU no feedback	U12	11	-		
+64	5-22	ARU no feedback	U12	12	4PHU		
+64	5-22	ARU no feedback	U12	13	0087		
+64	5-22	ARU no feedback	U12	14	-		
+64	5-22	ARU no feedback	U12	15	3H61		
+64	5-22	ARU no feedback	U12	16	29F3		
+64	5-22	ARU no feedback	U13	1	4PHU		
+64	5-22	ARU no feedback	U13	2	4CU5		
+64	5-22	ARU no feedback	U13	3	2FP9		
+64	5-22	ARU no feedback	U13	4	0087		
+64	5-22	ARU no feedback	U13	5	0097		
+64	5-22	ARU no feedback	U13	6	29H3		
+64	5-22	ARU no feedback	U13	7	29F3		
+64	5-22	ARU no feedback	U13	8	0000		
+64	5-22	ARU no feedback	U13	9	2FP9		
+64	5-22	ARU no feedback	U13	10	C645		
+64	5-22	ARU no feedback	U13	11	3F61		
+64	5-22	ARU no feedback	U13	12	A6FH		
+64	5-22	ARU no feedback	U13	13	H4C6		
+64	5-22	ARU no feedback	U13	14	78P0		
+64	5-22	ARU no feedback	U13	15	8595		
+64	5-22	ARU no feedback	U13	16	29F3		
+64	5-22	ARU no feedback	U14	1	8575		
+64	5-22	ARU no feedback	U14	2	90U2		
+64	5-22	ARU no feedback	U14	3	78P0		
+64	5-22	ARU no feedback	U14	4	F494		
+64	5-22	ARU no feedback	U14	5	90U2		
+64	5-22	ARU no feedback	U14	6	A6FH		
+64	5-22	ARU no feedback	U14	7	0000		
+64	5-22	ARU no feedback	U14	8	0097		
+64	5-22	ARU no feedback	U14	9	8653		
+64	5-22	ARU no feedback	U14	10	90U2		
+64	5-22	ARU no feedback	U14	11	2FP9		
+64	5-22	ARU no feedback	U14	12	C77H		
+64	5-22	ARU no feedback	U14	13	90U2		
+64	5-22	ARU no feedback	U14	14	29F3		
+64	5-22	ARU no feedback	U15	1	29F3		
+64	5-22	ARU no feedback	U15	2	4FF4		
+64	5-22	ARU no feedback	U15	3	3312		
+64	5-22	ARU no feedback	U15	4	8244		
+64	5-22	ARU no feedback	U15	5	PH68		
+64	5-22	ARU no feedback	U15	6	C156		
+64	5-22	ARU no feedback	U15	7	-		
+64	5-22	ARU no feedback	U15	8	0000		
+64	5-22	ARU no feedback	U15	9	29F3		
+64	5-22	ARU no feedback	U15	10	8FC4		
+64	5-22	ARU no feedback	U15	11	0000		
+64	5-22	ARU no feedback	U15	12	6U15		
+64	5-22	ARU no feedback	U15	13	57U8		
+64	5-22	ARU no feedback	U15	14	0U19		
+64	5-22	ARU no feedback	U15	15	4FF4		
+64	5-22	ARU no feedback	U15	16	29F3		
+64	5-22	ARU no feedback	U16	1	29F3		
+64	5-22	ARU no feedback	U16	2	4FF4		
+64	5-22	ARU no feedback	U16	3	3312		
+64	5-22	ARU no feedback	U16	4	5F3P		
+64	5-22	ARU no feedback	U16	5	AC87		
+64	5-22	ARU no feedback	U16	6	U7C9		
+64	5-22	ARU no feedback	U16	7	-		
+64	5-22	ARU no feedback	U16	8	0000		
+64	5-22	ARU no feedback	U16	9	29F3		
+64	5-22	ARU no feedback	U16	10	8FC4		
+64	5-22	ARU no feedback	U16	11	0000		
+64	5-22	ARU no feedback	U16	12	UF7F		
+64	5-22	ARU no feedback	U16	13	75F4		
+64	5-22	ARU no feedback	U16	14	35FC		
+64	5-22	ARU no feedback	U16	15	4FF4		
+64	5-22	ARU no feedback	U16	16	29F3		
+64	5-22	ARU no feedback	U17	1	29F3		
+64	5-22	ARU no feedback	U17	2	UF7F		
+64	5-22	ARU no feedback	U17	3	3312		
+64	5-22	ARU no feedback	U17	4	5F3P		
+64	5-22	ARU no feedback	U17	5	9895		
+64	5-22	ARU no feedback	U17	6	F4AC		
+64	5-22	ARU no feedback	U17	7	-		
+64	5-22	ARU no feedback	U17	8	0000		
+64	5-22	ARU no feedback	U17	9	29F3		
+64	5-22	ARU no feedback	U17	10	8FC4		
+64	5-22	ARU no feedback	U17	11	0000		
+64	5-22	ARU no feedback	U17	12	F494		
+64	5-22	ARU no feedback	U17	13	A574		
+64	5-22	ARU no feedback	U17	14	3PF5		
+64	5-22	ARU no feedback	U17	15	UCC9		
+64	5-22	ARU no feedback	U17	16	29F3		
+64	5-22	ARU no feedback	U18	1	29F3		
+64	5-22	ARU no feedback	U18	2	6U15		
+64	5-22	ARU no feedback	U18	3	75UH		
+64	5-22	ARU no feedback	U18	4	1AH1		
+64	5-22	ARU no feedback	U18	5	HP7A		
+64	5-22	ARU no feedback	U18	6	8244		
+64	5-22	ARU no feedback	U18	7	-		
+64	5-22	ARU no feedback	U18	8	0000		
+64	5-22	ARU no feedback	U18	9	29F3		
+64	5-22	ARU no feedback	U18	10	8FC4		
+64	5-22	ARU no feedback	U18	11	0000		
+64	5-22	ARU no feedback	U18	12	U69F		
+64	5-22	ARU no feedback	U18	13	977F		
+64	5-22	ARU no feedback	U18	14	0FFH		
+64	5-22	ARU no feedback	U18	15	F9C1		
+64	5-22	ARU no feedback	U18	16	29F3		
+64	5-22	ARU no feedback	U19	1	6A6H		
+64	5-22	ARU no feedback	U19	2	00H8		
+64	5-22	ARU no feedback	U19	3	H9P3		
+64	5-22	ARU no feedback	U19	4	1PU7		
+64	5-22	ARU no feedback	U19	5	0A55		
+64	5-22	ARU no feedback	U19	6	A7U4		
+64	5-22	ARU no feedback	U19	7	C356		
+64	5-22	ARU no feedback	U19	8	0000		
+64	5-22	ARU no feedback	U19	9	3P92		
+64	5-22	ARU no feedback	U19	10	7A3U		
+64	5-22	ARU no feedback	U19	11	7F95		
+64	5-22	ARU no feedback	U19	12	HUPH		
+64	5-22	ARU no feedback	U19	13	8P4F		
+64	5-22	ARU no feedback	U19	14	U0U6		
+64	5-22	ARU no feedback	U19	15	FHPF		
+64	5-22	ARU no feedback	U19	16	29F3		
+65	5-23	ARU no feedback	U20	1	2161		
+65	5-23	ARU no feedback	U20	2	46C2		
+65	5-23	ARU no feedback	U20	3	5941		
+65	5-23	ARU no feedback	U20	4	7819		
+65	5-23	ARU no feedback	U20	5	4HCA		
+65	5-23	ARU no feedback	U20	6	0C31		
+65	5-23	ARU no feedback	U20	7	3P92		
+65	5-23	ARU no feedback	U20	8	0000		
+65	5-23	ARU no feedback	U20	9	F268		
+65	5-23	ARU no feedback	U20	10	8AHH		
+65	5-23	ARU no feedback	U20	11	2516		
+65	5-23	ARU no feedback	U20	12	6HA3		
+65	5-23	ARU no feedback	U20	13	P813		
+65	5-23	ARU no feedback	U20	14	CA1P		
+65	5-23	ARU no feedback	U20	15	9065		
+65	5-23	ARU no feedback	U20	16	29F3		
+65	5-23	ARU no feedback	U21	1	HCUP		
+65	5-23	ARU no feedback	U21	2	P5UF		
+65	5-23	ARU no feedback	U21	3	5938		
+65	5-23	ARU no feedback	U21	4	94F5		
+65	5-23	ARU no feedback	U21	5	A547		
+65	5-23	ARU no feedback	U21	6	U3PA		
+65	5-23	ARU no feedback	U21	7	F268		
+65	5-23	ARU no feedback	U21	8	0000		
+65	5-23	ARU no feedback	U21	9	38A5		
+65	5-23	ARU no feedback	U21	10	HPH3		
+65	5-23	ARU no feedback	U21	11	7724		
+65	5-23	ARU no feedback	U21	12	9152		
+65	5-23	ARU no feedback	U21	13	CA12		
+65	5-23	ARU no feedback	U21	14	44PA		
+65	5-23	ARU no feedback	U21	15	F65H		
+65	5-23	ARU no feedback	U21	16	29F3		
+65	5-23	ARU no feedback	U22	1	6P49		
+65	5-23	ARU no feedback	U22	2	4908		
+65	5-23	ARU no feedback	U22	3	1UP4		
+65	5-23	ARU no feedback	U22	4	313U		
+65	5-23	ARU no feedback	U22	5	091A		
+65	5-23	ARU no feedback	U22	6	0080		
+65	5-23	ARU no feedback	U22	7	38A5		
+65	5-23	ARU no feedback	U22	8	0000		
+65	5-23	ARU no feedback	U22	9	38A5		
+65	5-23	ARU no feedback	U22	10	67P6		
+65	5-23	ARU no feedback	U22	11	HAP5		
+65	5-23	ARU no feedback	U22	12	85A6		
+65	5-23	ARU no feedback	U22	13	5C0F		
+65	5-23	ARU no feedback	U22	14	7H7H		
+65	5-23	ARU no feedback	U22	15	1PH4		
+65	5-23	ARU no feedback	U22	16	29F3		
+65	5-23	ARU no feedback	U23	1	F2A5		
+65	5-23	ARU no feedback	U23	2	UHF5		
+65	5-23	ARU no feedback	U23	3	07F5		
+65	5-23	ARU no feedback	U23	4	97CF		
+65	5-23	ARU no feedback	U23	5	94U9		
+65	5-23	ARU no feedback	U23	6	3CP0		
+65	5-23	ARU no feedback	U23	7	38A5		
+65	5-23	ARU no feedback	U23	8	0000		
+65	5-23	ARU no feedback	U23	9	-		
+65	5-23	ARU no feedback	U23	10	54H3		
+65	5-23	ARU no feedback	U23	11	C8P7		
+65	5-23	ARU no feedback	U23	12	H491		
+65	5-23	ARU no feedback	U23	13	54H3		
+65	5-23	ARU no feedback	U23	14	H491		
+65	5-23	ARU no feedback	U23	15	C8P7		
+65	5-23	ARU no feedback	U23	16	29F3		
+65	5-23	ARU no feedback	U24	1	C4P4		
+65	5-23	ARU no feedback	U24	2	0CHA		
+65	5-23	ARU no feedback	U24	3	9PP9		
+65	5-23	ARU no feedback	U24	4	38AU		
+65	5-23	ARU no feedback	U24	5	9321		
+65	5-23	ARU no feedback	U24	6	8767		
+65	5-23	ARU no feedback	U24	7	2FP9		
+65	5-23	ARU no feedback	U24	8	0000		
+65	5-23	ARU no feedback	U24	9	-		
+65	5-23	ARU no feedback	U24	10	3PA1		
+65	5-23	ARU no feedback	U24	11	819U		
+65	5-23	ARU no feedback	U24	12	9PP9		
+65	5-23	ARU no feedback	U24	13	3PA1		
+65	5-23	ARU no feedback	U24	14	9PP9		
+65	5-23	ARU no feedback	U24	15	819U		
+65	5-23	ARU no feedback	U24	16	29F3		
+65	5-23	ARU no feedback	U25	1	8497		
+65	5-23	ARU no feedback	U25	2	3P83		
+65	5-23	ARU no feedback	U25	3	9CF3		
+65	5-23	ARU no feedback	U25	4	A8CC		
+65	5-23	ARU no feedback	U25	5	4380		
+65	5-23	ARU no feedback	U25	6	8777		
+65	5-23	ARU no feedback	U25	7	6F4F		
+65	5-23	ARU no feedback	U25	8	0000		
+65	5-23	ARU no feedback	U25	9	24UH		
+65	5-23	ARU no feedback	U25	10	A127		
+65	5-23	ARU no feedback	U25	11	943H		
+65	5-23	ARU no feedback	U25	12	11P7		
+65	5-23	ARU no feedback	U25	13	F3H4		
+65	5-23	ARU no feedback	U25	14	FUFA		
+65	5-23	ARU no feedback	U25	15	2HF9		
+65	5-23	ARU no feedback	U25	16	29F3		
+65	5-23	ARU no feedback	U26	1	F9C1		
+65	5-23	ARU no feedback	U26	2	90U2		
+65	5-23	ARU no feedback	U26	3	FUFA		
+65	5-23	ARU no feedback	U26	4	0FFH		
+65	5-23	ARU no feedback	U26	5	90U2		
+65	5-23	ARU no feedback	U26	6	4380		
+65	5-23	ARU no feedback	U26	7	0000		
+65	5-23	ARU no feedback	U26	8	11P7		
+65	5-23	ARU no feedback	U26	9	UF7F		
+65	5-23	ARU no feedback	U26	10	90U2		
+65	5-23	ARU no feedback	U26	11	9CF3		
+65	5-23	ARU no feedback	U26	12	UCC9		
+65	5-23	ARU no feedback	U26	13	90U2		
+65	5-23	ARU no feedback	U26	14	29F3		
+65	5-23	ARU no feedback	U27	1	0FFH		
+65	5-23	ARU no feedback	U27	2	4471		
+65	5-23	ARU no feedback	U27	3	3P83		
+65	5-23	ARU no feedback	U27	4	UCC9		
+65	5-23	ARU no feedback	U27	5	4471		
+65	5-23	ARU no feedback	U27	6	2HF9		
+65	5-23	ARU no feedback	U27	7	0000		
+65	5-23	ARU no feedback	U27	8	8777		
+65	5-23	ARU no feedback	U27	9	3PF5		
+65	5-23	ARU no feedback	U27	10	4471		
+65	5-23	ARU no feedback	U27	11	943H		
+65	5-23	ARU no feedback	U27	12	F9C1		
+65	5-23	ARU no feedback	U27	13	4471		
+65	5-23	ARU no feedback	U27	14	29F3		
+65	5-23	ARU no feedback	U28	1	8575		
+65	5-23	ARU no feedback	U28	2	4471		
+65	5-23	ARU no feedback	U28	3	3F61		
+65	5-23	ARU no feedback	U28	4	8653		
+65	5-23	ARU no feedback	U28	5	4471		
+65	5-23	ARU no feedback	U28	6	4CU5		
+65	5-23	ARU no feedback	U28	7	0000		
+65	5-23	ARU no feedback	U28	8	8595		
+65	5-23	ARU no feedback	U28	9	C77H		
+65	5-23	ARU no feedback	U28	10	4471		
+65	5-23	ARU no feedback	U28	11	29H3		
+65	5-23	ARU no feedback	U28	12	0C0P		
+65	5-23	ARU no feedback	U28	13	4471		
+65	5-23	ARU no feedback	U28	14	29F3		
+65	5-23	ARU no feedback	U29	1	-		
+65	5-23	ARU no feedback	U29	2	-		
+65	5-23	ARU no feedback	U29	3	-		
+65	5-23	ARU no feedback	U29	4	U7C9		
+65	5-23	ARU no feedback	U29	5	AC87		
+65	5-23	ARU no feedback	U29	6	PH68		
+65	5-23	ARU no feedback	U29	7	5F3P		
+65	5-23	ARU no feedback	U29	8	0000		
+65	5-23	ARU no feedback	U29	9	8244		
+65	5-23	ARU no feedback	U29	10	3312		
+65	5-23	ARU no feedback	U29	11	0000		
+65	5-23	ARU no feedback	U29	12	29F3		
+65	5-23	ARU no feedback	U29	13	29F3		
+65	5-23	ARU no feedback	U29	14	29F3		
+65	5-23	ARU no feedback	U29	15	-		
+65	5-23	ARU no feedback	U29	16	29F3		
+66	5-24	ARU no feedback	U30	1	-		
+66	5-24	ARU no feedback	U30	2	-		
+66	5-24	ARU no feedback	U30	3	-		
+66	5-24	ARU no feedback	U30	4	U7C9		
+66	5-24	ARU no feedback	U30	5	AC87		
+66	5-24	ARU no feedback	U30	6	75UH		
+66	5-24	ARU no feedback	U30	7	U7C9		
+66	5-24	ARU no feedback	U30	8	0000		
+66	5-24	ARU no feedback	U30	9	C156		
+66	5-24	ARU no feedback	U30	10	AC87		
+66	5-24	ARU no feedback	U30	11	0000		
+66	5-24	ARU no feedback	U30	12	29F3		
+66	5-24	ARU no feedback	U30	13	29F3		
+66	5-24	ARU no feedback	U30	14	29F3		
+66	5-24	ARU no feedback	U30	15	-		
+66	5-24	ARU no feedback	U30	16	29F3		
+66	5-24	ARU no feedback	U31	1	-		
+66	5-24	ARU no feedback	U31	2	-		
+66	5-24	ARU no feedback	U31	3	-		
+66	5-24	ARU no feedback	U31	4	U7C9		
+66	5-24	ARU no feedback	U31	5	AC87		
+66	5-24	ARU no feedback	U31	6	HP7A		
+66	5-24	ARU no feedback	U31	7	5F3P		
+66	5-24	ARU no feedback	U31	8	0000		
+66	5-24	ARU no feedback	U31	9	1AH1		
+66	5-24	ARU no feedback	U31	10	3312		
+66	5-24	ARU no feedback	U31	11	0000		
+66	5-24	ARU no feedback	U31	12	29F3		
+66	5-24	ARU no feedback	U31	13	29F3		
+66	5-24	ARU no feedback	U31	14	29F3		
+66	5-24	ARU no feedback	U31	15	-		
+66	5-24	ARU no feedback	U31	16	29F3		
+66	5-24	ARU no feedback	U32	1	-		
+66	5-24	ARU no feedback	U32	2	-		
+66	5-24	ARU no feedback	U32	3	-		
+66	5-24	ARU no feedback	U32	4	U7C9		
+66	5-24	ARU no feedback	U32	5	AC87		
+66	5-24	ARU no feedback	U32	6	46PU		
+66	5-24	ARU no feedback	U32	7	F4AC		
+66	5-24	ARU no feedback	U32	8	0000		
+66	5-24	ARU no feedback	U32	9	8244		
+66	5-24	ARU no feedback	U32	10	9895		
+66	5-24	ARU no feedback	U32	11	0000		
+66	5-24	ARU no feedback	U32	12	29F3		
+66	5-24	ARU no feedback	U32	13	29F3		
+66	5-24	ARU no feedback	U32	14	29F3		
+66	5-24	ARU no feedback	U32	15	-		
+66	5-24	ARU no feedback	U32	16	29F3		
+66	5-24	ARU no feedback	U33	1	0000		
+66	5-24	ARU no feedback	U33	2	1PU7		
+66	5-24	ARU no feedback	U33	3	9124		
+66	5-24	ARU no feedback	U33	4	1PU7		
+66	5-24	ARU no feedback	U33	5	6A6H		
+66	5-24	ARU no feedback	U33	6	9124		
+66	5-24	ARU no feedback	U33	7	6A6H		
+66	5-24	ARU no feedback	U33	8	0000		
+66	5-24	ARU no feedback	U33	9	8P4F		
+66	5-24	ARU no feedback	U33	10	9124		
+66	5-24	ARU no feedback	U33	11	8P4F		
+66	5-24	ARU no feedback	U33	12	7A3U		
+66	5-24	ARU no feedback	U33	13	9124		
+66	5-24	ARU no feedback	U33	14	7A3U		
+66	5-24	ARU no feedback	U33	15	0000		
+66	5-24	ARU no feedback	U33	16	29F3		
+66	5-24	ARU no feedback	U34	1	0000		
+66	5-24	ARU no feedback	U34	2	7819		
+66	5-24	ARU no feedback	U34	3	9124		
+66	5-24	ARU no feedback	U34	4	7819		
+66	5-24	ARU no feedback	U34	5	2161		
+66	5-24	ARU no feedback	U34	6	9124		
+66	5-24	ARU no feedback	U34	7	2161		
+66	5-24	ARU no feedback	U34	8	0000		
+66	5-24	ARU no feedback	U34	9	P813		
+66	5-24	ARU no feedback	U34	10	9124		
+66	5-24	ARU no feedback	U34	11	P813		
+66	5-24	ARU no feedback	U34	12	8AHH		
+66	5-24	ARU no feedback	U34	13	9124		
+66	5-24	ARU no feedback	U34	14	8AHH		
+66	5-24	ARU no feedback	U34	15	0000		
+66	5-24	ARU no feedback	U34	16	29F3		
+66	5-24	ARU no feedback	U35	1	0000		
+66	5-24	ARU no feedback	U35	2	94F5		
+66	5-24	ARU no feedback	U35	3	9124		
+66	5-24	ARU no feedback	U35	4	94F5		
+66	5-24	ARU no feedback	U35	5	HCUP		
+66	5-24	ARU no feedback	U35	6	9124		
+66	5-24	ARU no feedback	U35	7	HCUP		
+66	5-24	ARU no feedback	U35	8	0000		
+66	5-24	ARU no feedback	U35	9	CA12		
+66	5-24	ARU no feedback	U35	10	9124		
+66	5-24	ARU no feedback	U35	11	CA12		
+66	5-24	ARU no feedback	U35	12	HPH3		
+66	5-24	ARU no feedback	U35	13	9124		
+66	5-24	ARU no feedback	U35	14	HPH3		
+66	5-24	ARU no feedback	U35	15	0000		
+66	5-24	ARU no feedback	U35	16	29F3		
+66	5-24	ARU no feedback	U36	1	0000		
+66	5-24	ARU no feedback	U36	2	313U		
+66	5-24	ARU no feedback	U36	3	9124		
+66	5-24	ARU no feedback	U36	4	313U		
+66	5-24	ARU no feedback	U36	5	6P49		
+66	5-24	ARU no feedback	U36	6	9124		
+66	5-24	ARU no feedback	U36	7	6P49		
+66	5-24	ARU no feedback	U36	8	0000		
+66	5-24	ARU no feedback	U36	9	5C0F		
+66	5-24	ARU no feedback	U36	10	9124		
+66	5-24	ARU no feedback	U36	11	5C0F		
+66	5-24	ARU no feedback	U36	12	67P6		
+66	5-24	ARU no feedback	U36	13	9124		
+66	5-24	ARU no feedback	U36	14	67P6		
+66	5-24	ARU no feedback	U36	15	0000		
+66	5-24	ARU no feedback	U36	16	29F3		
+66	5-24	ARU no feedback	U37	1	0000		
+66	5-24	ARU no feedback	U37	2	97CF		
+66	5-24	ARU no feedback	U37	3	9124		
+66	5-24	ARU no feedback	U37	4	97CF		
+66	5-24	ARU no feedback	U37	5	F2A5		
+66	5-24	ARU no feedback	U37	6	9124		
+66	5-24	ARU no feedback	U37	7	F2A5		
+66	5-24	ARU no feedback	U37	8	0000		
+66	5-24	ARU no feedback	U37	9	54H3		
+66	5-24	ARU no feedback	U37	10	C8P7		
+66	5-24	ARU no feedback	U37	11	54H3		
+66	5-24	ARU no feedback	U37	12	54H3		
+66	5-24	ARU no feedback	U37	13	C8P7		
+66	5-24	ARU no feedback	U37	14	54H3		
+66	5-24	ARU no feedback	U37	15	0000		
+66	5-24	ARU no feedback	U37	16	29F3		
+66	5-24	ARU no feedback	U38	1	HH7P		
+66	5-24	ARU no feedback	U38	2	968C		
+66	5-24	ARU no feedback	U38	3	2A87		
+66	5-24	ARU no feedback	U38	4	4P6P		
+66	5-24	ARU no feedback	U38	5	45PP		
+66	5-24	ARU no feedback	U38	6	2U7H		
+66	5-24	ARU no feedback	U38	7	24UH		
+66	5-24	ARU no feedback	U38	8	0000		
+66	5-24	ARU no feedback	U38	9	2FP9		
+66	5-24	ARU no feedback	U38	10	UAA5		
+66	5-24	ARU no feedback	U38	11	8160		
+66	5-24	ARU no feedback	U38	12	1789		
+66	5-24	ARU no feedback	U38	13	72F6		
+66	5-24	ARU no feedback	U38	14	3P2C		
+66	5-24	ARU no feedback	U38	15	2H9U		
+66	5-24	ARU no feedback	U38	16	29F3		
+66	5-24	ARU no feedback	U39	1	F20A		
+66	5-24	ARU no feedback	U39	2	3PH5		
+66	5-24	ARU no feedback	U39	3	95C9		
+66	5-24	ARU no feedback	U39	4	590F		
+66	5-24	ARU no feedback	U39	5	U2F4		
+66	5-24	ARU no feedback	U39	6	8721		
+66	5-24	ARU no feedback	U39	7	2FP9		
+66	5-24	ARU no feedback	U39	8	0000		
+66	5-24	ARU no feedback	U39	9	6F4F		
+66	5-24	ARU no feedback	U39	10	0543		
+66	5-24	ARU no feedback	U39	11	7P86		
+66	5-24	ARU no feedback	U39	12	1789		
+66	5-24	ARU no feedback	U39	13	6UA4		
+66	5-24	ARU no feedback	U39	14	F1C0	F1CU	last char 0 vs U: glyph has a print dropout at top right (open top); rounded top-left suggests 0 (cf. U41 pin 3 on next page, F1C0, clearly 0); U possible; pin14 F1C?: last glyph is 0 or U — top is open but the upper stroke ends curve inward like a broken 0, narrower than the U in 6UA4 directly below; 0 favored (F1C0 also printed clearly at U41 pin 3 on p.5-25)
+66	5-24	ARU no feedback	U39	15	F772		
+66	5-24	ARU no feedback	U39	16	29F3		
+67	5-25	ARU no feedback	U40	1	U69F		
+67	5-25	ARU no feedback	U40	2	4471		
+67	5-25	ARU no feedback	U40	3	3PH5		
+67	5-25	ARU no feedback	U40	4	977F		
+67	5-25	ARU no feedback	U40	5	4471		
+67	5-25	ARU no feedback	U40	6	7P86		
+67	5-25	ARU no feedback	U40	7	0000		
+67	5-25	ARU no feedback	U40	8	8721		
+67	5-25	ARU no feedback	U40	9	F494		
+67	5-25	ARU no feedback	U40	10	4471		
+67	5-25	ARU no feedback	U40	11	F772		
+67	5-25	ARU no feedback	U40	12	A574		
+67	5-25	ARU no feedback	U40	13	4471		
+67	5-25	ARU no feedback	U40	14	29F3		
+67	5-25	ARU no feedback	U41	1	977F		
+67	5-25	ARU no feedback	U41	2	90U2		
+67	5-25	ARU no feedback	U41	3	F1C0		
+67	5-25	ARU no feedback	U41	4	3PF5		
+67	5-25	ARU no feedback	U41	5	90U2		
+67	5-25	ARU no feedback	U41	6	1789		
+67	5-25	ARU no feedback	U41	7	0000		
+67	5-25	ARU no feedback	U41	8	U2F4		
+67	5-25	ARU no feedback	U41	9	U69F		
+67	5-25	ARU no feedback	U41	10	90U2		
+67	5-25	ARU no feedback	U41	11	95C9		
+67	5-25	ARU no feedback	U41	12	A574		
+67	5-25	ARU no feedback	U41	13	90U2		
+67	5-25	ARU no feedback	U41	14	29F3		
+67	5-25	ARU no feedback	U42	1	54H3		
+67	5-25	ARU no feedback	U42	2	54H3		
+67	5-25	ARU no feedback	U42	3	0000		
+67	5-25	ARU no feedback	U42	4	-		
+67	5-25	ARU no feedback	U42	5	-		
+67	5-25	ARU no feedback	U42	6	-		
+67	5-25	ARU no feedback	U42	7	0000		
+67	5-25	ARU no feedback	U42	8	0000		
+67	5-25	ARU no feedback	U42	9	29F3		
+67	5-25	ARU no feedback	U42	10	29F3		
+67	5-25	ARU no feedback	U42	11	-		
+67	5-25	ARU no feedback	U42	12	-		
+67	5-25	ARU no feedback	U42	13	-		
+67	5-25	ARU no feedback	U42	14	29F3		
+67	5-25	ARU no feedback	U43	1	2839		
+67	5-25	ARU no feedback	U43	2	-		
+67	5-25	ARU no feedback	U43	3	97CF		
+67	5-25	ARU no feedback	U43	4	67P6		
+67	5-25	ARU no feedback	U43	5	-		
+67	5-25	ARU no feedback	U43	6	-		
+67	5-25	ARU no feedback	U43	7	54H3		
+67	5-25	ARU no feedback	U43	8	F2A5		
+67	5-25	ARU no feedback	U43	9	-		
+67	5-25	ARU no feedback	U43	10	0000		
+67	5-25	ARU no feedback	U43	11	-		
+67	5-25	ARU no feedback	U43	12	-		
+67	5-25	ARU no feedback	U43	13	313U		
+67	5-25	ARU no feedback	U43	14	HPH3		
+67	5-25	ARU no feedback	U43	15	-		
+67	5-25	ARU no feedback	U43	16	-		
+67	5-25	ARU no feedback	U43	17	5C0F		
+67	5-25	ARU no feedback	U43	18	6P49		
+67	5-25	ARU no feedback	U43	19	-		
+67	5-25	ARU no feedback	U43	20	29F3		
+67	5-25	ARU no feedback	U44	1	2839		
+67	5-25	ARU no feedback	U44	2	-		
+67	5-25	ARU no feedback	U44	3	94F5		
+67	5-25	ARU no feedback	U44	4	8AHH		
+67	5-25	ARU no feedback	U44	5	-		
+67	5-25	ARU no feedback	U44	6	-		
+67	5-25	ARU no feedback	U44	7	CA12		
+67	5-25	ARU no feedback	U44	8	HCUP		
+67	5-25	ARU no feedback	U44	9	-		
+67	5-25	ARU no feedback	U44	10	0000		
+67	5-25	ARU no feedback	U44	11	-		
+67	5-25	ARU no feedback	U44	12	-		
+67	5-25	ARU no feedback	U44	13	7819		
+67	5-25	ARU no feedback	U44	14	7A3U		
+67	5-25	ARU no feedback	U44	15	-		
+67	5-25	ARU no feedback	U44	16	-		
+67	5-25	ARU no feedback	U44	17	P813		
+67	5-25	ARU no feedback	U44	18	2161		
+67	5-25	ARU no feedback	U44	19	-		
+67	5-25	ARU no feedback	U44	20	29F3		
+67	5-25	ARU no feedback	U45	1	3108		
+67	5-25	ARU no feedback	U45	2	0000		
+67	5-25	ARU no feedback	U45	3	7A3U		
+67	5-25	ARU no feedback	U45	4	8P4F		
+67	5-25	ARU no feedback	U45	5	6A6H		
+67	5-25	ARU no feedback	U45	6	1PU7		
+67	5-25	ARU no feedback	U45	7	0000		
+67	5-25	ARU no feedback	U45	8	0000		
+67	5-25	ARU no feedback	U45	9	0000		
+67	5-25	ARU no feedback	U45	10	0000		
+67	5-25	ARU no feedback	U45	11	0A55		
+67	5-25	ARU no feedback	U45	12	H9P3		
+67	5-25	ARU no feedback	U45	13	U0U6		
+67	5-25	ARU no feedback	U45	14	HUPH		
+67	5-25	ARU no feedback	U45	15	-		
+67	5-25	ARU no feedback	U45	16	29F3		
+67	5-25	ARU no feedback	U46	1	3108		
+67	5-25	ARU no feedback	U46	2	0000		
+67	5-25	ARU no feedback	U46	3	8AHH		
+67	5-25	ARU no feedback	U46	4	P813		
+67	5-25	ARU no feedback	U46	5	2161		
+67	5-25	ARU no feedback	U46	6	7819		
+67	5-25	ARU no feedback	U46	7	0000		
+67	5-25	ARU no feedback	U46	8	0000		
+67	5-25	ARU no feedback	U46	9	0000		
+67	5-25	ARU no feedback	U46	10	0000		
+67	5-25	ARU no feedback	U46	11	4HCA		
+67	5-25	ARU no feedback	U46	12	5941		
+67	5-25	ARU no feedback	U46	13	CA1P		
+67	5-25	ARU no feedback	U46	14	6HA3		
+67	5-25	ARU no feedback	U46	15	-		
+67	5-25	ARU no feedback	U46	16	29F3		
+67	5-25	ARU no feedback	U47	1	3108		
+67	5-25	ARU no feedback	U47	2	0000		
+67	5-25	ARU no feedback	U47	3	HPH3		
+67	5-25	ARU no feedback	U47	4	CA12		
+67	5-25	ARU no feedback	U47	5	HCUP		
+67	5-25	ARU no feedback	U47	6	94F5		
+67	5-25	ARU no feedback	U47	7	0000		
+67	5-25	ARU no feedback	U47	8	0000		
+67	5-25	ARU no feedback	U47	9	0000		
+67	5-25	ARU no feedback	U47	10	0000		
+67	5-25	ARU no feedback	U47	11	A547		
+67	5-25	ARU no feedback	U47	12	5938		
+67	5-25	ARU no feedback	U47	13	44PA		
+67	5-25	ARU no feedback	U47	14	9152		
+67	5-25	ARU no feedback	U47	15	-		
+67	5-25	ARU no feedback	U47	16	29F3		
+67	5-25	ARU no feedback	U48	1	3108		
+67	5-25	ARU no feedback	U48	2	0000		
+67	5-25	ARU no feedback	U48	3	67P6		
+67	5-25	ARU no feedback	U48	4	5C0F		
+67	5-25	ARU no feedback	U48	5	6P49		
+67	5-25	ARU no feedback	U48	6	313U		
+67	5-25	ARU no feedback	U48	7	0000		
+67	5-25	ARU no feedback	U48	8	0000		
+67	5-25	ARU no feedback	U48	9	0000		
+67	5-25	ARU no feedback	U48	10	0000		
+67	5-25	ARU no feedback	U48	11	091A		
+67	5-25	ARU no feedback	U48	12	1UP4		
+67	5-25	ARU no feedback	U48	13	7H7H		
+67	5-25	ARU no feedback	U48	14	85A6		
+67	5-25	ARU no feedback	U48	15	-		
+67	5-25	ARU no feedback	U48	16	29F3		
+67	5-25	ARU no feedback	U49	1	3108		
+67	5-25	ARU no feedback	U49	2	0000		
+67	5-25	ARU no feedback	U49	3	54H3		
+67	5-25	ARU no feedback	U49	4	54H3		
+67	5-25	ARU no feedback	U49	5	F2A5		
+67	5-25	ARU no feedback	U49	6	97CF		
+67	5-25	ARU no feedback	U49	7	0000		
+67	5-25	ARU no feedback	U49	8	0000		
+67	5-25	ARU no feedback	U49	9	0000		
+67	5-25	ARU no feedback	U49	10	0000		
+67	5-25	ARU no feedback	U49	11	94U9		
+67	5-25	ARU no feedback	U49	12	07F5		
+67	5-25	ARU no feedback	U49	13	H491		
+67	5-25	ARU no feedback	U49	14	H491		
+67	5-25	ARU no feedback	U49	15	-		
+67	5-25	ARU no feedback	U49	16	29F3		
+68	5-26	ARU no feedback	U50	1	UF7F		
+68	5-26	ARU no feedback	U50	2	4471		
+68	5-26	ARU no feedback	U50	3	2U7H		
+68	5-26	ARU no feedback	U50	4	6U15		
+68	5-26	ARU no feedback	U50	5	4471		
+68	5-26	ARU no feedback	U50	6	968C		
+68	5-26	ARU no feedback	U50	7	0000		
+68	5-26	ARU no feedback	U50	8	2H9U		
+68	5-26	ARU no feedback	U50	9	75F4		
+68	5-26	ARU no feedback	U50	10	4471		
+68	5-26	ARU no feedback	U50	11	8160		
+68	5-26	ARU no feedback	U50	12	57U8		
+68	5-26	ARU no feedback	U50	13	4471		
+68	5-26	ARU no feedback	U50	14	29F3		
+68	5-26	ARU no feedback	U51	1	6U15		
+68	5-26	ARU no feedback	U51	2	90U2		
+68	5-26	ARU no feedback	U51	3	45PP		
+68	5-26	ARU no feedback	U51	4	75F4		
+68	5-26	ARU no feedback	U51	5	90U2		
+68	5-26	ARU no feedback	U51	6	2A87		
+68	5-26	ARU no feedback	U51	7	0000		
+68	5-26	ARU no feedback	U51	8	3P2C		
+68	5-26	ARU no feedback	U51	9	57U8		
+68	5-26	ARU no feedback	U51	10	90U2		
+68	5-26	ARU no feedback	U51	11	1789		
+68	5-26	ARU no feedback	U51	12	33FC		printed clearly as 33FC when zoomed; cf. U16.14 and U52.12 which read 35FC
+68	5-26	ARU no feedback	U51	13	90U2		
+68	5-26	ARU no feedback	U51	14	29F3		
+68	5-26	ARU no feedback	U52	1	0U19		
+68	5-26	ARU no feedback	U52	2	4471		
+68	5-26	ARU no feedback	U52	3	0CHA		
+68	5-26	ARU no feedback	U52	4	4FF4		
+68	5-26	ARU no feedback	U52	5	4471		
+68	5-26	ARU no feedback	U52	6	819U		
+68	5-26	ARU no feedback	U52	7	0000		
+68	5-26	ARU no feedback	U52	8	819U		
+68	5-26	ARU no feedback	U52	9	4FF4		
+68	5-26	ARU no feedback	U52	10	4471		
+68	5-26	ARU no feedback	U52	11	8767		
+68	5-26	ARU no feedback	U52	12	35FC		
+68	5-26	ARU no feedback	U52	13	4471		
+68	5-26	ARU no feedback	U52	14	29F3		
+68	5-26	ARU no feedback	U53	1	0U19		
+68	5-26	ARU no feedback	U53	2	90U2		
+68	5-26	ARU no feedback	U53	3	9321		
+68	5-26	ARU no feedback	U53	4	4FF4		
+68	5-26	ARU no feedback	U53	5	90U2		
+68	5-26	ARU no feedback	U53	6	9PP9		pin6 9PP9: second P faintly printed (bowl broken), read P
+68	5-26	ARU no feedback	U53	7	0000		
+68	5-26	ARU no feedback	U53	8	9PP9		
+68	5-26	ARU no feedback	U53	9	4FF4		
+68	5-26	ARU no feedback	U53	10	90U2		
+68	5-26	ARU no feedback	U53	11	9PP9		
+68	5-26	ARU no feedback	U53	12	4FF4		
+68	5-26	ARU no feedback	U53	13	90U2		
+68	5-26	ARU no feedback	U53	14	29F3		
+68	5-26	ARU no feedback	U54	1	HP7A		
+68	5-26	ARU no feedback	U54	2	U7C9		
+68	5-26	ARU no feedback	U54	3	0000		
+68	5-26	ARU no feedback	U54	4	29F3		
+68	5-26	ARU no feedback	U54	5	8244		
+68	5-26	ARU no feedback	U54	6	AC87		
+68	5-26	ARU no feedback	U54	7	0000		
+68	5-26	ARU no feedback	U54	8	29F3		
+68	5-26	ARU no feedback	U54	9	0000		
+68	5-26	ARU no feedback	U54	10	4471		
+68	5-26	ARU no feedback	U54	11	6HC2		
+68	5-26	ARU no feedback	U54	12	90U2		
+68	5-26	ARU no feedback	U54	13	C931		
+68	5-26	ARU no feedback	U54	14	29F3		
+69	5-27	ARU	U2	1	-		
+69	5-27	ARU	U2	2	-		
+69	5-27	ARU	U2	3	-		
+69	5-27	ARU	U2	4	-		
+69	5-27	ARU	U2	5	FP92		
+69	5-27	ARU	U2	6	U804		
+69	5-27	ARU	U2	7	0000		
+69	5-27	ARU	U2	8	08C9		
+69	5-27	ARU	U2	9	3P2U		
+69	5-27	ARU	U2	10	FP92		
+69	5-27	ARU	U2	11	U804		
+69	5-27	ARU	U2	12	FP92		
+69	5-27	ARU	U2	13	U804		
+69	5-27	ARU	U2	14	3696		
+69	5-27	ARU	U3	1	3696		
+69	5-27	ARU	U3	2	9C33		
+69	5-27	ARU	U3	3	0000		
+69	5-27	ARU	U3	4	0000		
+69	5-27	ARU	U3	5	-		
+69	5-27	ARU	U3	6	-		
+69	5-27	ARU	U3	7	-		
+69	5-27	ARU	U3	8	0000		
+69	5-27	ARU	U3	9	3696		
+69	5-27	ARU	U3	10	4573		
+69	5-27	ARU	U3	11	0000		
+69	5-27	ARU	U3	12	-		
+69	5-27	ARU	U3	13	-		
+69	5-27	ARU	U3	14	U8A9		
+69	5-27	ARU	U3	15	8P47		
+69	5-27	ARU	U3	16	3696		
+69	5-27	ARU	U4	1	3696		
+69	5-27	ARU	U4	2	343H		
+69	5-27	ARU	U4	3	50U5		
+69	5-27	ARU	U4	4	0000		
+69	5-27	ARU	U4	5	-		
+69	5-27	ARU	U4	6	-		
+69	5-27	ARU	U4	7	-		
+69	5-27	ARU	U4	8	0000		
+69	5-27	ARU	U4	9	3696		
+69	5-27	ARU	U4	10	4573		
+69	5-27	ARU	U4	11	0000		
+69	5-27	ARU	U4	12	-		
+69	5-27	ARU	U4	13	-		
+69	5-27	ARU	U4	14	5465		
+69	5-27	ARU	U4	15	2149		
+69	5-27	ARU	U4	16	3696		
+69	5-27	ARU	U5	1	85U0		
+69	5-27	ARU	U5	2	FP92		
+69	5-27	ARU	U5	3	4C62		
+69	5-27	ARU	U5	4	H10A		
+69	5-27	ARU	U5	5	FP92		
+69	5-27	ARU	U5	6	1U98		
+69	5-27	ARU	U5	7	0000		
+69	5-27	ARU	U5	8	F374		
+69	5-27	ARU	U5	9	0HP6		
+69	5-27	ARU	U5	10	FP92		
+69	5-27	ARU	U5	11	126P		
+69	5-27	ARU	U5	12	HFUF		
+69	5-27	ARU	U5	13	FP92		
+69	5-27	ARU	U5	14	3696		
+69	5-27	ARU	U6	1	H827		
+69	5-27	ARU	U6	2	FP92		
+69	5-27	ARU	U6	3	16C5		
+69	5-27	ARU	U6	4	876U		
+69	5-27	ARU	U6	5	FP92		
+69	5-27	ARU	U6	6	49UH		
+69	5-27	ARU	U6	7	0000		
+69	5-27	ARU	U6	8	H8CF		
+69	5-27	ARU	U6	9	162P		
+69	5-27	ARU	U6	10	FP92		
+69	5-27	ARU	U6	11	95AH		
+69	5-27	ARU	U6	12	5C3U		
+69	5-27	ARU	U6	13	FP92		
+69	5-27	ARU	U6	14	3696		
+69	5-27	ARU	U7	1	4808		
+69	5-27	ARU	U7	2	FP92		
+69	5-27	ARU	U7	3	869A		
+69	5-27	ARU	U7	4	UP8C		
+69	5-27	ARU	U7	5	FP92		
+69	5-27	ARU	U7	6	3019		
+69	5-27	ARU	U7	7	0000		
+69	5-27	ARU	U7	8	055U		
+69	5-27	ARU	U7	9	FCFH		
+69	5-27	ARU	U7	10	FP92		
+69	5-27	ARU	U7	11	U415		
+69	5-27	ARU	U7	12	3A87		
+69	5-27	ARU	U7	13	FP92		
+69	5-27	ARU	U7	14	3696		
+69	5-27	ARU	U8	1	361P		
+69	5-27	ARU	U8	2	FP92		
+69	5-27	ARU	U8	3	U88F		
+69	5-27	ARU	U8	4	A1P2		
+69	5-27	ARU	U8	5	FP92		
+69	5-27	ARU	U8	6	6U70		
+69	5-27	ARU	U8	7	0000		
+69	5-27	ARU	U8	8	UPP5		
+69	5-27	ARU	U8	9	3077		
+69	5-27	ARU	U8	10	FP92		
+69	5-27	ARU	U8	11	1PC3		
+69	5-27	ARU	U8	12	H021		
+69	5-27	ARU	U8	13	FP92		
+69	5-27	ARU	U8	14	3696		
+69	5-27	ARU	U9	1	C7C3		
+69	5-27	ARU	U9	2	FP92		
+69	5-27	ARU	U9	3	7921		
+69	5-27	ARU	U9	4	6U12		
+69	5-27	ARU	U9	5	FP92		
+69	5-27	ARU	U9	6	A180		
+69	5-27	ARU	U9	7	0000		
+69	5-27	ARU	U9	8	3P2U		
+69	5-27	ARU	U9	9	U0CH		
+69	5-27	ARU	U9	10	FP92		
+69	5-27	ARU	U9	11	3P2U		
+69	5-27	ARU	U9	12	U0CH		
+69	5-27	ARU	U9	13	FP92		
+69	5-27	ARU	U9	14	3696		
+70	5-28	ARU	U10	1	0000		
+70	5-28	ARU	U10	2	U0CH		
+70	5-28	ARU	U10	3	CAF1		
+70	5-28	ARU	U10	4	CAF1		
+70	5-28	ARU	U10	5	U0CH		
+70	5-28	ARU	U10	6	6U12		
+70	5-28	ARU	U10	7	859P		
+70	5-28	ARU	U10	8	34HF		
+70	5-28	ARU	U10	9	C7C3		
+70	5-28	ARU	U10	10	0000		
+70	5-28	ARU	U10	11	0000		
+70	5-28	ARU	U10	12	H021		
+70	5-28	ARU	U10	13	UCU9		
+70	5-28	ARU	U10	14	3C55		
+70	5-28	ARU	U10	15	3077		
+70	5-28	ARU	U10	16	A1P2		
+70	5-28	ARU	U10	17	187U		
+70	5-28	ARU	U10	18	3786		
+70	5-28	ARU	U10	19	361P		
+70	5-28	ARU	U10	20	3696		
+70	5-28	ARU	U11	1	0000		
+70	5-28	ARU	U11	2	3A87		
+70	5-28	ARU	U11	3	2PC5		
+70	5-28	ARU	U11	4	FF20		
+70	5-28	ARU	U11	5	FCFH		
+70	5-28	ARU	U11	6	UP8C		
+70	5-28	ARU	U11	7	A6AF		
+70	5-28	ARU	U11	8	FCAC		
+70	5-28	ARU	U11	9	4808		
+70	5-28	ARU	U11	10	0000		
+70	5-28	ARU	U11	11	0000		
+70	5-28	ARU	U11	12	5C3U		
+70	5-28	ARU	U11	13	PHF4		
+70	5-28	ARU	U11	14	77P6		
+70	5-28	ARU	U11	15	162P		
+70	5-28	ARU	U11	16	876U		
+70	5-28	ARU	U11	17	5565		
+70	5-28	ARU	U11	18	PCU4		
+70	5-28	ARU	U11	19	H827		
+70	5-28	ARU	U11	20	3696		
+70	5-28	ARU	U12	1	3696		
+70	5-28	ARU	U12	2	HFUF		
+70	5-28	ARU	U12	3	-		
+70	5-28	ARU	U12	4	P243		
+70	5-28	ARU	U12	5	4077		
+70	5-28	ARU	U12	6	-		
+70	5-28	ARU	U12	7	0HP6		
+70	5-28	ARU	U12	8	0000		
+70	5-28	ARU	U12	9	0000		
+70	5-28	ARU	U12	10	H10A		
+70	5-28	ARU	U12	11	-		
+70	5-28	ARU	U12	12	U9AP		
+70	5-28	ARU	U12	13	505C		
+70	5-28	ARU	U12	14	-		
+70	5-28	ARU	U12	15	85U0		
+70	5-28	ARU	U12	16	3696		
+70	5-28	ARU	U13	1	U9AP		
+70	5-28	ARU	U13	2	U903		
+70	5-28	ARU	U13	3	1P6H		
+70	5-28	ARU	U13	4	505C		
+70	5-28	ARU	U13	5	33UP		
+70	5-28	ARU	U13	6	5533		
+70	5-28	ARU	U13	7	3696		
+70	5-28	ARU	U13	8	0000		
+70	5-28	ARU	U13	9	1P6H		
+70	5-28	ARU	U13	10	P243		
+70	5-28	ARU	U13	11	F27P		
+70	5-28	ARU	U13	12	3P50		
+70	5-28	ARU	U13	13	4077		
+70	5-28	ARU	U13	14	3276		
+70	5-28	ARU	U13	15	6FF1		
+70	5-28	ARU	U13	16	3696		
+70	5-28	ARU	U14	1	2149		
+70	5-28	ARU	U14	2	86CP		
+70	5-28	ARU	U14	3	3276		
+70	5-28	ARU	U14	4	9C33		
+70	5-28	ARU	U14	5	86CP		
+70	5-28	ARU	U14	6	3P50		
+70	5-28	ARU	U14	7	0000		
+70	5-28	ARU	U14	8	33UP		
+70	5-28	ARU	U14	9	5465		
+70	5-28	ARU	U14	10	86CP		
+70	5-28	ARU	U14	11	1P6H		
+70	5-28	ARU	U14	12	8P47		
+70	5-28	ARU	U14	13	86CP		
+70	5-28	ARU	U14	14	3696		
+70	5-28	ARU	U15	1	3696		
+70	5-28	ARU	U15	2	0UAH		
+70	5-28	ARU	U15	3	3PC5		
+70	5-28	ARU	U15	4	UH8F		
+70	5-28	ARU	U15	5	9CPU		
+70	5-28	ARU	U15	6	F339		
+70	5-28	ARU	U15	7	-		
+70	5-28	ARU	U15	8	0000		
+70	5-28	ARU	U15	9	3696		
+70	5-28	ARU	U15	10	4573		
+70	5-28	ARU	U15	11	0000		
+70	5-28	ARU	U15	12	2C67		
+70	5-28	ARU	U15	13	HU4H		
+70	5-28	ARU	U15	14	5140		
+70	5-28	ARU	U15	15	0UAH		
+70	5-28	ARU	U15	16	3696		
+70	5-28	ARU	U16	1	3696		
+70	5-28	ARU	U16	2	0UAH		
+70	5-28	ARU	U16	3	3PC5		
+70	5-28	ARU	U16	4	58H6		
+70	5-28	ARU	U16	5	FC1A		
+70	5-28	ARU	U16	6	93FF		
+70	5-28	ARU	U16	7	-		
+70	5-28	ARU	U16	8	0000		
+70	5-28	ARU	U16	9	3696		
+70	5-28	ARU	U16	10	4573		
+70	5-28	ARU	U16	11	0000		
+70	5-28	ARU	U16	12	UC7F		
+70	5-28	ARU	U16	13	2344		
+70	5-28	ARU	U16	14	APH6		
+70	5-28	ARU	U16	15	0UAH		
+70	5-28	ARU	U16	16	3696		
+70	5-28	ARU	U17	1	3696		
+70	5-28	ARU	U17	2	UC7F		
+70	5-28	ARU	U17	3	3PC5		
+70	5-28	ARU	U17	4	58H6		
+70	5-28	ARU	U17	5	U5AU		
+70	5-28	ARU	U17	6	AH79		
+70	5-28	ARU	U17	7	-		
+70	5-28	ARU	U17	8	0000		
+70	5-28	ARU	U17	9	3696		
+70	5-28	ARU	U17	10	4573		
+70	5-28	ARU	U17	11	0000		
+70	5-28	ARU	U17	12	9C33		
+70	5-28	ARU	U17	13	9FFP		
+70	5-28	ARU	U17	14	567U		
+70	5-28	ARU	U17	15	81PA		
+70	5-28	ARU	U17	16	3696		
+70	5-28	ARU	U18	1	3696		
+70	5-28	ARU	U18	2	2C67		
+70	5-28	ARU	U18	3	6P40		
+70	5-28	ARU	U18	4	0823		
+70	5-28	ARU	U18	5	A55A		
+70	5-28	ARU	U18	6	UH8F		
+70	5-28	ARU	U18	7	-		
+70	5-28	ARU	U18	8	0000		
+70	5-28	ARU	U18	9	3696		
+70	5-28	ARU	U18	10	4573		
+70	5-28	ARU	U18	11	0000		
+70	5-28	ARU	U18	12	343H		
+70	5-28	ARU	U18	13	33F0		
+70	5-28	ARU	U18	14	U971		
+70	5-28	ARU	U18	15	2PP4		
+70	5-28	ARU	U18	16	3696		
+70	5-28	ARU	U19	1	2A65		
+70	5-28	ARU	U19	2	1U98		
+70	5-28	ARU	U19	3	60CU		
+70	5-28	ARU	U19	4	P885		
+70	5-28	ARU	U19	5	5CP3		
+70	5-28	ARU	U19	6	4C62		
+70	5-28	ARU	U19	7	U804		
+70	5-28	ARU	U19	8	0000		
+70	5-28	ARU	U19	9	F7P1		
+70	5-28	ARU	U19	10	F5F1		
+70	5-28	ARU	U19	11	126P		
+70	5-28	ARU	U19	12	34P3		
+70	5-28	ARU	U19	13	9AH7		
+70	5-28	ARU	U19	14	09U9		
+70	5-28	ARU	U19	15	F374		
+70	5-28	ARU	U19	16	3696		
+71	5-29	ARU	U20	1	U9U2		
+71	5-29	ARU	U20	2	49UH		
+71	5-29	ARU	U20	3	4815		
+71	5-29	ARU	U20	4	9136		
+71	5-29	ARU	U20	5	4062		
+71	5-29	ARU	U20	6	16C5		
+71	5-29	ARU	U20	7	F7P1		
+71	5-29	ARU	U20	8	0000		
+71	5-29	ARU	U20	9	440C		
+71	5-29	ARU	U20	10	U058		
+71	5-29	ARU	U20	11	95AH		
+71	5-29	ARU	U20	12	011F		
+71	5-29	ARU	U20	13	P978		
+71	5-29	ARU	U20	14	6A06		
+71	5-29	ARU	U20	15	H8CF		
+71	5-29	ARU	U20	16	3696		
+71	5-29	ARU	U21	1	PHPF		
+71	5-29	ARU	U21	2	3019		
+71	5-29	ARU	U21	3	0H92		
+71	5-29	ARU	U21	4	PC08		
+71	5-29	ARU	U21	5	2999		
+71	5-29	ARU	U21	6	869A		
+71	5-29	ARU	U21	7	440C		
+71	5-29	ARU	U21	8	0000		
+71	5-29	ARU	U21	9	5F4F		
+71	5-29	ARU	U21	10	12U0		
+71	5-29	ARU	U21	11	U415		
+71	5-29	ARU	U21	12	CA59		
+71	5-29	ARU	U21	13	P9P4		
+71	5-29	ARU	U21	14	8U4F		
+71	5-29	ARU	U21	15	055U		
+71	5-29	ARU	U21	16	3696		
+71	5-29	ARU	U22	1	411A		
+71	5-29	ARU	U22	2	6U70		
+71	5-29	ARU	U22	3	4U40		
+71	5-29	ARU	U22	4	CHH8		
+71	5-29	ARU	U22	5	1918		
+71	5-29	ARU	U22	6	U88F		
+71	5-29	ARU	U22	7	5F4F		
+71	5-29	ARU	U22	8	0000		
+71	5-29	ARU	U22	9	UA22		
+71	5-29	ARU	U22	10	5064		pin10 5064: 2nd glyph has a gap at top (U vs 0 ambiguous at pixel level); read 0
+71	5-29	ARU	U22	11	1PC3		
+71	5-29	ARU	U22	12	1126		
+71	5-29	ARU	U22	13	C5PH		
+71	5-29	ARU	U22	14	2U18		
+71	5-29	ARU	U22	15	UPP5		
+71	5-29	ARU	U22	16	3696		
+71	5-29	ARU	U23	1	6665		
+71	5-29	ARU	U23	2	A180		
+71	5-29	ARU	U23	3	4FF8		
+71	5-29	ARU	U23	4	0HH7		
+71	5-29	ARU	U23	5	8PH4		
+71	5-29	ARU	U23	6	7921		
+71	5-29	ARU	U23	7	UA22		
+71	5-29	ARU	U23	8	0000		
+71	5-29	ARU	U23	9	-		
+71	5-29	ARU	U23	10	77A3		
+71	5-29	ARU	U23	11	3P2U		
+71	5-29	ARU	U23	12	P1UC		
+71	5-29	ARU	U23	13	77AH		zoomed: clearly 77AH while pin 10 is clearly 77A3
+71	5-29	ARU	U23	14	P1UC		
+71	5-29	ARU	U23	15	3P2U		
+71	5-29	ARU	U23	16	3696		
+71	5-29	ARU	U24	1	859P		
+71	5-29	ARU	U24	2	6P1P		
+71	5-29	ARU	U24	3	P500		
+71	5-29	ARU	U24	4	34HF		
+71	5-29	ARU	U24	5	PU81		
+71	5-29	ARU	U24	6	809C		
+71	5-29	ARU	U24	7	5CF6		
+71	5-29	ARU	U24	8	0000		
+71	5-29	ARU	U24	9	-		
+71	5-29	ARU	U24	10	CAF1		
+71	5-29	ARU	U24	11	5141		
+71	5-29	ARU	U24	12	P500		
+71	5-29	ARU	U24	13	CAF1		
+71	5-29	ARU	U24	14	P500		
+71	5-29	ARU	U24	15	5141		
+71	5-29	ARU	U24	16	3696		
+71	5-29	ARU	U25	1	A6AF		
+71	5-29	ARU	U25	2	4H81		
+71	5-29	ARU	U25	3	FHUC		
+71	5-29	ARU	U25	4	FCAC		
+71	5-29	ARU	U25	5	C6PH		
+71	5-29	ARU	U25	6	P33P		
+71	5-29	ARU	U25	7	9P78		
+71	5-29	ARU	U25	8	0000		
+71	5-29	ARU	U25	9	267C		
+71	5-29	ARU	U25	10	2PC5		
+71	5-29	ARU	U25	11	A5A9		
+71	5-29	ARU	U25	12	AH67		
+71	5-29	ARU	U25	13	FF20		
+71	5-29	ARU	U25	14	P1P0		
+71	5-29	ARU	U25	15	0C16		
+71	5-29	ARU	U25	16	3696		
+71	5-29	ARU	U26	1	2PP4		
+71	5-29	ARU	U26	2	86CP		
+71	5-29	ARU	U26	3	P1P0		
+71	5-29	ARU	U26	4	U971		
+71	5-29	ARU	U26	5	86CP		
+71	5-29	ARU	U26	6	C6PH		
+71	5-29	ARU	U26	7	0000		
+71	5-29	ARU	U26	8	AH67		
+71	5-29	ARU	U26	9	UC7F		
+71	5-29	ARU	U26	10	86CP		
+71	5-29	ARU	U26	11	FHUC		
+71	5-29	ARU	U26	12	81PA		
+71	5-29	ARU	U26	13	86CP		
+71	5-29	ARU	U26	14	3696		
+71	5-29	ARU	U27	1	U971		
+71	5-29	ARU	U27	2	0205		
+71	5-29	ARU	U27	3	4H81		
+71	5-29	ARU	U27	4	81PA		
+71	5-29	ARU	U27	5	0205		
+71	5-29	ARU	U27	6	0C16		
+71	5-29	ARU	U27	7	0000		
+71	5-29	ARU	U27	8	P33P		
+71	5-29	ARU	U27	9	567U		
+71	5-29	ARU	U27	10	0205		
+71	5-29	ARU	U27	11	A5A9		
+71	5-29	ARU	U27	12	2PP4		
+71	5-29	ARU	U27	13	0205		
+71	5-29	ARU	U27	14	3696		
+71	5-29	ARU	U28	1	2149		
+71	5-29	ARU	U28	2	0205		
+71	5-29	ARU	U28	3	F27P		
+71	5-29	ARU	U28	4	5465		
+71	5-29	ARU	U28	5	0205		
+71	5-29	ARU	U28	6	U903		
+71	5-29	ARU	U28	7	0000		
+71	5-29	ARU	U28	8	6FF1		
+71	5-29	ARU	U28	9	8P47		
+71	5-29	ARU	U28	10	0205		
+71	5-29	ARU	U28	11	5533		
+71	5-29	ARU	U28	12	U8A9		
+71	5-29	ARU	U28	13	0205		
+71	5-29	ARU	U28	14	3696		
+71	5-29	ARU	U33	1	000P		
+71	5-29	ARU	U33	2	P885		
+71	5-29	ARU	U33	3	08C9		
+71	5-29	ARU	U33	4	P885		
+71	5-29	ARU	U33	5	2A65		
+71	5-29	ARU	U33	6	08C9		
+71	5-29	ARU	U33	7	2A6H		
+71	5-29	ARU	U33	8	0000		
+71	5-29	ARU	U33	9	9AHU		
+71	5-29	ARU	U33	10	08C9		
+71	5-29	ARU	U33	11	9AH7		
+71	5-29	ARU	U33	12	F5F1		
+71	5-29	ARU	U33	13	08C9		
+71	5-29	ARU	U33	14	F5F1		
+71	5-29	ARU	U33	15	0000		
+71	5-29	ARU	U33	16	3696		
+72	5-30	ARU	U34	1	000P		
+72	5-30	ARU	U34	2	9136		
+72	5-30	ARU	U34	3	08C9		
+72	5-30	ARU	U34	4	9136		
+72	5-30	ARU	U34	5	U9U2		
+72	5-30	ARU	U34	6	08C9		
+72	5-30	ARU	U34	7	U9U0		
+72	5-30	ARU	U34	8	0000		
+72	5-30	ARU	U34	9	P978		
+72	5-30	ARU	U34	10	08C9		
+72	5-30	ARU	U34	11	P978		
+72	5-30	ARU	U34	12	U05P		
+72	5-30	ARU	U34	13	08C9		
+72	5-30	ARU	U34	14	U058		
+72	5-30	ARU	U34	15	0000		
+72	5-30	ARU	U34	16	3696		
+72	5-30	ARU	U35	1	000P		
+72	5-30	ARU	U35	2	PC08		
+72	5-30	ARU	U35	3	08C9		
+72	5-30	ARU	U35	4	PC02		
+72	5-30	ARU	U35	5	PHPF		
+72	5-30	ARU	U35	6	08C9		
+72	5-30	ARU	U35	7	PHPA		
+72	5-30	ARU	U35	8	0000		
+72	5-30	ARU	U35	9	P9PA		
+72	5-30	ARU	U35	10	08C9		
+72	5-30	ARU	U35	11	P9P4		
+72	5-30	ARU	U35	12	12UF		
+72	5-30	ARU	U35	13	08C9		
+72	5-30	ARU	U35	14	12U0		
+72	5-30	ARU	U35	15	0000		
+72	5-30	ARU	U35	16	3696		
+72	5-30	ARU	U36	1	000P		
+72	5-30	ARU	U36	2	CHH8		
+72	5-30	ARU	U36	3	08C9		
+72	5-30	ARU	U36	4	CHHP		
+72	5-30	ARU	U36	5	411A		
+72	5-30	ARU	U36	6	08C9		
+72	5-30	ARU	U36	7	4110		
+72	5-30	ARU	U36	8	0000		
+72	5-30	ARU	U36	9	C5P9		
+72	5-30	ARU	U36	10	08C9		
+72	5-30	ARU	U36	11	C5PH		
+72	5-30	ARU	U36	12	5062		
+72	5-30	ARU	U36	13	08C9		
+72	5-30	ARU	U36	14	5064		
+72	5-30	ARU	U36	15	0000		
+72	5-30	ARU	U36	16	3696		
+72	5-30	ARU	U37	1	000P		
+72	5-30	ARU	U37	2	0HH7		
+72	5-30	ARU	U37	3	08C9		
+72	5-30	ARU	U37	4	0HHH		
+72	5-30	ARU	U37	5	6665		
+72	5-30	ARU	U37	6	08C9		
+72	5-30	ARU	U37	7	666C		
+72	5-30	ARU	U37	8	0000		
+72	5-30	ARU	U37	9	77A3		
+72	5-30	ARU	U37	10	3P2U		
+72	5-30	ARU	U37	11	77AH		
+72	5-30	ARU	U37	12	77A3		
+72	5-30	ARU	U37	13	3P2U		
+72	5-30	ARU	U37	14	77A3		
+72	5-30	ARU	U37	15	0000		
+72	5-30	ARU	U37	16	3696		
+72	5-30	ARU	U38	1	187U		
+72	5-30	ARU	U38	2	9740		
+72	5-30	ARU	U38	3	29UF		
+72	5-30	ARU	U38	4	3786		
+72	5-30	ARU	U38	5	8476		
+72	5-30	ARU	U38	6	958C		
+72	5-30	ARU	U38	7	267C		
+72	5-30	ARU	U38	8	0000		
+72	5-30	ARU	U38	9	5CF6		
+72	5-30	ARU	U38	10	UCU9		
+72	5-30	ARU	U38	11	H721		
+72	5-30	ARU	U38	12	C2A0		
+72	5-30	ARU	U38	13	3C55		
+72	5-30	ARU	U38	14	82P8		
+72	5-30	ARU	U38	15	1A74		
+72	5-30	ARU	U38	16	3696		
+72	5-30	ARU	U39	1	5565		
+72	5-30	ARU	U39	2	496H		
+72	5-30	ARU	U39	3	F27F		
+72	5-30	ARU	U39	4	PCU4		
+72	5-30	ARU	U39	5	124C		
+72	5-30	ARU	U39	6	P7H2		
+72	5-30	ARU	U39	7	1P6H		
+72	5-30	ARU	U39	8	0000		
+72	5-30	ARU	U39	9	9P78		
+72	5-30	ARU	U39	10	PHF4		
+72	5-30	ARU	U39	11	P94A		
+72	5-30	ARU	U39	12	9AU6		
+72	5-30	ARU	U39	13	77P6		
+72	5-30	ARU	U39	14	PP67		
+72	5-30	ARU	U39	15	47U5		
+72	5-30	ARU	U39	16	3696		
+72	5-30	ARU	U40	1	343H		
+72	5-30	ARU	U40	2	0205		
+72	5-30	ARU	U40	3	496H		
+72	5-30	ARU	U40	4	33F0		
+72	5-30	ARU	U40	5	0205		
+72	5-30	ARU	U40	6	P94A		
+72	5-30	ARU	U40	7	0000		
+72	5-30	ARU	U40	8	P7H2		
+72	5-30	ARU	U40	9	9C33		
+72	5-30	ARU	U40	10	0205		
+72	5-30	ARU	U40	11	47U5		
+72	5-30	ARU	U40	12	9FFP		
+72	5-30	ARU	U40	13	0205		
+72	5-30	ARU	U40	14	3696		
+72	5-30	ARU	U41	1	33F0		
+72	5-30	ARU	U41	2	86CP		
+72	5-30	ARU	U41	3	PP67		
+72	5-30	ARU	U41	4	567U		
+72	5-30	ARU	U41	5	86CP		
+72	5-30	ARU	U41	6	9AU6		
+72	5-30	ARU	U41	7	0000		
+72	5-30	ARU	U41	8	124C		
+72	5-30	ARU	U41	9	343H		
+72	5-30	ARU	U41	10	86CP		
+72	5-30	ARU	U41	11	F27F		
+72	5-30	ARU	U41	12	9FFP		
+72	5-30	ARU	U41	13	86CP		
+72	5-30	ARU	U41	14	3696		
+72	5-30	ARU	U42	1	77A3		
+72	5-30	ARU	U42	2	77AH		
+72	5-30	ARU	U42	3	000P		
+72	5-30	ARU	U42	4	-		
+72	5-30	ARU	U42	5	-		
+72	5-30	ARU	U42	6	-		
+72	5-30	ARU	U42	7	-		printed as a dash (GND pin position of 14-pin DIP; no-feedback table U42.7 = 0000)
+72	5-30	ARU	U42	8	0000		
+72	5-30	ARU	U42	9	3696		
+72	5-30	ARU	U42	10	3696		
+72	5-30	ARU	U42	11	-		
+72	5-30	ARU	U42	12	-		
+72	5-30	ARU	U42	13	-		
+72	5-30	ARU	U42	14	3696		
+72	5-30	ARU	U43	1	25C5		
+72	5-30	ARU	U43	2	-		
+72	5-30	ARU	U43	3	0HHH		
+72	5-30	ARU	U43	4	5062		
+72	5-30	ARU	U43	5	-		
+72	5-30	ARU	U43	6	-		
+72	5-30	ARU	U43	7	77A3		
+72	5-30	ARU	U43	8	666C		
+72	5-30	ARU	U43	9	-		
+72	5-30	ARU	U43	10	0000		
+72	5-30	ARU	U43	11	-		
+72	5-30	ARU	U43	12	-		
+72	5-30	ARU	U43	13	CHHP		
+72	5-30	ARU	U43	14	12UF		
+72	5-30	ARU	U43	15	-		
+72	5-30	ARU	U43	16	-		
+72	5-30	ARU	U43	17	C5P9		
+72	5-30	ARU	U43	18	4110		
+72	5-30	ARU	U43	19	-		
+72	5-30	ARU	U43	20	3696		
+73	5-31	ARU	U44	1	25C5		
+73	5-31	ARU	U44	2	-		
+73	5-31	ARU	U44	3	PC02		
+73	5-31	ARU	U44	4	U05P		
+73	5-31	ARU	U44	5	-		
+73	5-31	ARU	U44	6	-		
+73	5-31	ARU	U44	7	P9PA		
+73	5-31	ARU	U44	8	PHPA		
+73	5-31	ARU	U44	9	-		
+73	5-31	ARU	U44	10	0000		
+73	5-31	ARU	U44	11	-		
+73	5-31	ARU	U44	12	-		
+73	5-31	ARU	U44	13	9136		
+73	5-31	ARU	U44	14	F5F1		
+73	5-31	ARU	U44	15	-		
+73	5-31	ARU	U44	16	-		
+73	5-31	ARU	U44	17	P978		
+73	5-31	ARU	U44	18	U9U0		
+73	5-31	ARU	U44	19	-		
+73	5-31	ARU	U44	20	3696		
+73	5-31	ARU	U45	1	8658		
+73	5-31	ARU	U45	2	0000		
+73	5-31	ARU	U45	3	F5F1		
+73	5-31	ARU	U45	4	9AHU		
+73	5-31	ARU	U45	5	2A6H		
+73	5-31	ARU	U45	6	P885		
+73	5-31	ARU	U45	7	0000		
+73	5-31	ARU	U45	8	0000		
+73	5-31	ARU	U45	9	0000		
+73	5-31	ARU	U45	10	0000		
+73	5-31	ARU	U45	11	5CP3		
+73	5-31	ARU	U45	12	60CU		
+73	5-31	ARU	U45	13	09U9		
+73	5-31	ARU	U45	14	34P3		
+73	5-31	ARU	U45	15	-		
+73	5-31	ARU	U45	16	3696		
+73	5-31	ARU	U46	1	8658		
+73	5-31	ARU	U46	2	0000		
+73	5-31	ARU	U46	3	U05P		
+73	5-31	ARU	U46	4	P978		
+73	5-31	ARU	U46	5	U9U0		
+73	5-31	ARU	U46	6	9136		
+73	5-31	ARU	U46	7	0000		
+73	5-31	ARU	U46	8	0000		
+73	5-31	ARU	U46	9	0000		
+73	5-31	ARU	U46	10	0000		
+73	5-31	ARU	U46	11	4062		
+73	5-31	ARU	U46	12	4815		
+73	5-31	ARU	U46	13	6A06		
+73	5-31	ARU	U46	14	011F		
+73	5-31	ARU	U46	15	-		
+73	5-31	ARU	U46	16	3696		
+73	5-31	ARU	U47	1	8658		
+73	5-31	ARU	U47	2	0000		
+73	5-31	ARU	U47	3	12UF		
+73	5-31	ARU	U47	4	P9PA		
+73	5-31	ARU	U47	5	PHPA		
+73	5-31	ARU	U47	6	PC02		
+73	5-31	ARU	U47	7	0000		
+73	5-31	ARU	U47	8	0000		
+73	5-31	ARU	U47	9	0000		
+73	5-31	ARU	U47	10	0000		
+73	5-31	ARU	U47	11	2999		
+73	5-31	ARU	U47	12	0H92		
+73	5-31	ARU	U47	13	8U4F		
+73	5-31	ARU	U47	14	CA59		
+73	5-31	ARU	U47	15	-		
+73	5-31	ARU	U47	16	3696		
+73	5-31	ARU	U48	1	8658		
+73	5-31	ARU	U48	2	0000		
+73	5-31	ARU	U48	3	5062		
+73	5-31	ARU	U48	4	C5P9		
+73	5-31	ARU	U48	5	4110		
+73	5-31	ARU	U48	6	CHHP		
+73	5-31	ARU	U48	7	0000		
+73	5-31	ARU	U48	8	0000		
+73	5-31	ARU	U48	9	0000		
+73	5-31	ARU	U48	10	0000		
+73	5-31	ARU	U48	11	1918		
+73	5-31	ARU	U48	12	4U40		
+73	5-31	ARU	U48	13	2U18		
+73	5-31	ARU	U48	14	1126		
+73	5-31	ARU	U48	15	-		
+73	5-31	ARU	U48	16	3696		
+73	5-31	ARU	U49	1	8658		
+73	5-31	ARU	U49	2	0000		
+73	5-31	ARU	U49	3	77A3		
+73	5-31	ARU	U49	4	77A3		
+73	5-31	ARU	U49	5	666C		
+73	5-31	ARU	U49	6	0HHH		
+73	5-31	ARU	U49	7	0000		
+73	5-31	ARU	U49	8	0000		
+73	5-31	ARU	U49	9	0000		
+73	5-31	ARU	U49	10	0000		
+73	5-31	ARU	U49	11	8PH4		
+73	5-31	ARU	U49	12	4FF8		
+73	5-31	ARU	U49	13	P1UC		
+73	5-31	ARU	U49	14	P1UC		
+73	5-31	ARU	U49	15	-		
+73	5-31	ARU	U49	16	3696		
+73	5-31	ARU	U50	1	UC7F		
+73	5-31	ARU	U50	2	0205		
+73	5-31	ARU	U50	3	958C		
+73	5-31	ARU	U50	4	2C67		
+73	5-31	ARU	U50	5	0205		
+73	5-31	ARU	U50	6	9740		
+73	5-31	ARU	U50	7	0000		
+73	5-31	ARU	U50	8	1A74		
+73	5-31	ARU	U50	9	2344		
+73	5-31	ARU	U50	10	0205		
+73	5-31	ARU	U50	11	H721		
+73	5-31	ARU	U50	12	HU4H		
+73	5-31	ARU	U50	13	0205		
+73	5-31	ARU	U50	14	3696		
+73	5-31	ARU	U51	1	2C67		
+73	5-31	ARU	U51	2	86CP		
+73	5-31	ARU	U51	3	8476		
+73	5-31	ARU	U51	4	2344		
+73	5-31	ARU	U51	5	86CP		
+73	5-31	ARU	U51	6	29UF		
+73	5-31	ARU	U51	7	0000		
+73	5-31	ARU	U51	8	82P8		
+73	5-31	ARU	U51	9	HU4H		
+73	5-31	ARU	U51	10	86CP		
+73	5-31	ARU	U51	11	C2A0		
+73	5-31	ARU	U51	12	APH6		
+73	5-31	ARU	U51	13	86CP		
+73	5-31	ARU	U51	14	3696		
+73	5-31	ARU	U52	1	5140		
+73	5-31	ARU	U52	2	0205		
+73	5-31	ARU	U52	3	6P1P		
+73	5-31	ARU	U52	4	0UAH		
+73	5-31	ARU	U52	5	0205		
+73	5-31	ARU	U52	6	5141		
+73	5-31	ARU	U52	7	0000		
+73	5-31	ARU	U52	8	5141		
+73	5-31	ARU	U52	9	0UAH		
+73	5-31	ARU	U52	10	0205		
+73	5-31	ARU	U52	11	809C		
+73	5-31	ARU	U52	12	APH6		
+73	5-31	ARU	U52	13	0205		
+73	5-31	ARU	U52	14	3696		
+73	5-31	ARU	U53	1	5140		
+73	5-31	ARU	U53	2	86CP		
+73	5-31	ARU	U53	3	PU81		
+73	5-31	ARU	U53	4	0UAH		
+73	5-31	ARU	U53	5	86CP		
+73	5-31	ARU	U53	6	P500		
+73	5-31	ARU	U53	7	0000		
+73	5-31	ARU	U53	8	P500		
+73	5-31	ARU	U53	9	0UAH		
+73	5-31	ARU	U53	10	86CP		
+73	5-31	ARU	U53	11	P500		
+73	5-31	ARU	U53	12	0UAH		
+73	5-31	ARU	U53	13	86CP		
+73	5-31	ARU	U53	14	3696		
+74	5-32	ARU	U54	1	A55A		
+74	5-32	ARU	U54	2	93FF		
+74	5-32	ARU	U54	3	0000		
+74	5-32	ARU	U54	4	3696		
+74	5-32	ARU	U54	5	UH8F		
+74	5-32	ARU	U54	6	FC1A		
+74	5-32	ARU	U54	7	0000		
+74	5-32	ARU	U54	8	3696		
+74	5-32	ARU	U54	9	0000		
+74	5-32	ARU	U54	10	0205		
+74	5-32	ARU	U54	11	3493		
+74	5-32	ARU	U54	12	86CP		
+74	5-32	ARU	U54	13	C028		
+74	5-32	ARU	U54	14	3696		
