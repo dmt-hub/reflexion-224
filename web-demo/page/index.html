@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lexicon 224 / 224X / 224XL emulator</title>
+<link rel="stylesheet" href="params.css">
+<style>
+  .go { color: #1a1; }
+  .halt { color: #c11; }
+  button:disabled .go, button:disabled .halt { color: inherit; }
+  #drop { border: 2px dashed #999; padding: 0.8em 1em; max-width: 44em; }
+  #drop.over { background: #eef3ff; border-color: #36c; }
+  .link { color: #36c; text-decoration: underline; cursor: pointer; }
+  button, select { font-size: 125%; padding: 0.25em 0.8em; }
+  select { padding: 0.2em 0.3em; }
+  #periodText { display: inline-block; width: 4.5em; font-family: monospace; }
+  button[aria-pressed=true] { background: #ffd966; }
+  .hint { color: gray; font-size: small; }
+  #headroom, #gains { font-family: monospace; }
+  #headroom .lit { background: #3a3; color: white; }
+  #gains .lit { background: #36c; color: white; }
+  #gains span { display: inline-block; width: 3.2em; text-align: center; border: 1px solid #999; margin-right: 1px; font-size: small; }
+  #headroom .lit.clip { background: #c33; }
+  #headroom span { display: inline-block; width: 3.2em; text-align: center; border: 1px solid #999; margin-right: 1px; font-size: small; }
+</style>
+</head>
+<body>
+<h1>Lexicon 224 / 224X / 224XL emulator</h1>
+
+<h2>Machine and firmware</h2>
+<div id="drop">Drop your Lexicon chip files here: any number of sets, loose or in a <code>.zip</code>
+(224, 224X, 224XL). Or <label class="link">choose files<input type="file" id="roms" multiple hidden></label>.
+Known chips are recognized by content, whatever their names. They stay in this browser.</div>
+<p><label>Firmware <select id="set" disabled><option>(no firmware yet)</option></select></label>
+<button id="power" disabled>Power on</button> <span id="bootStatus"></span>
+<span id="savedRoms" hidden>(remembered in this browser: <button id="forgetRoms">forget</button>)</span></p>
+<pre id="audioStatus"></pre>
+
+<h2>Audio</h2>
+<p class="transport">
+  <button id="start" disabled><span class="go">▶</span> Start</button>
+  <button id="stop" disabled><span class="halt">■</span> Stop</button>
+  <button id="muteInput" aria-pressed="false" title="Stop feeding the input (the source keeps running) so the reverb tail rings out by itself. Key: M.">Mute input</button>
+  <span class="hint">space: start/stop, M: mute</span>
+</p>
+<h3>Input</h3>
+<label>Source <select id="source">
+  <option value="click">click once a second</option>
+  <option value="impulse">single-sample impulse (for measuring)</option>
+  <option value="silence">silence</option>
+  <option value="sine">sine 440 Hz</option>
+  <option value="noise">noise bursts</option>
+  <option value="mic">microphone / line in (use headphones)</option>
+  <option value="file" id="fileOption">your own audio file…</option>
+</select></label>
+<label title="How often the click, the impulse, the noise burst or your file starts again (a file's own length loops it seamlessly; longer adds silence after it).">repeat every <input type="range" id="period" min="0.25" max="20" step="0.05" value="1"> <span id="periodText">1.00 s</span></label>
+<input type="file" id="audioFile" accept="audio/*" hidden>
+<br>
+<label title="Input gain. 0 dB: a full-scale file or microphone reaches the onset of ADC clipping (the red segment); the built-in sounds sit 6 dB below that. A microphone usually wants +12 to +24 dB.">Level <input type="range" id="level" min="-24" max="30" step="1" value="0" autocomplete="off"> <span id="levelText">0 dB</span></label>
+<div id="headroom" title="Input headroom, as the hardware measures it: the AIN's five level detectors, 6 dB apart, 0 dB = the onset of ADC clipping (the firmware lights its front-panel LEDs from the same registers, and its level-dependent features, Decay Optimization and Dynamic Decay, read them too)."></div>
+
+<div id="gains" title="The input board's gain ranger (AGC): for each sample it picks the largest of four gains (0, +6, +12, +18 dB) that keeps the 12-bit converter below clipping, and the FPC shifts the result back: a 12-bit converter with a 2-bit exponent, about 16 bits of range. Quiet input uses +18 dB. Modeled with the analog boards on; off, the gain stays at 0 dB."></div>
+
+<h3>Output</h3>
+<label>Left <select id="outL"><option selected>A</option><option>B</option><option>C</option><option>D</option></select></label>
+<label>Right <select id="outR"><option>A</option><option>B</option><option selected>C</option><option>D</option></select></label>
+<label>Dry/wet <input type="range" id="wet" min="0" max="100" value="100"></label>
+<label title="The AIN/AOUT boards: elliptic filters (15 kHz on the 224X/224XL, about 8 kHz on the original 224), emphasis, sample-and-holds and the input gain ranger. Off: the nearest-sample path, for comparison. Right after switching, the reverb tail still in memory is heard through the other setting (the stored audio is pre-emphasized when the boards are on)."><input type="checkbox" id="analog" checked> Analog boards</label>
+
+<h2>Program</h2>
+<select id="program" disabled><option>(power on to read the program list)</option></select>
+<label>Variation <select id="variation" disabled>
+  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+  <option>6</option><option>7</option><option>8</option><option>9</option></select></label>
+<button id="share" disabled title="A link with this program, variation, slider values and toggles. It names the firmware only by its hash: whoever opens it loads their own copy.">Copy share link</button>
+<span id="operatorStatus"></span>
+<p id="larcOptions">
+  <label title="224XL: while you play, the decay is the MID and LF DECAY settings; when the input goes quiet (its running level falls well below the level it held), the firmware glides MID and LF decay to the STOP DECAY settings (page 2), recompiling as it goes, and jumps straight back when the input returns."><input type="checkbox" id="toggle-dyn" disabled> Dynamic decay</label>
+  <label title="Keeps room modes from ringing in the tail by continuously modulating certain delay lines: the firmware keeps rewriting the modulated taps' pairs of interpolation coefficients (the rows marked rewritten under Running program). Off parks those taps."><input type="checkbox" id="toggle-enh" disabled> Mode enhancement</label>
+  <label title="Reduces the reverb's diffusion and coloration dynamically in response to the input level (Universal Audio's 224 manual). In the firmware: when the input stops, an amount (up to 12) is subtracted from every diffusion allpass coefficient and the rows are recompiled, then it steps back to 0 as the level it held decays (about 1.5 s)."><input type="checkbox" id="toggle-opt" disabled> Decay optimization</label>
+  <label title="224XL: the LARC's MUTE key; the firmware mutes the outputs."><input type="checkbox" id="mute" disabled> Output mute</label>
+</p>
+<div id="pages"></div>
+
+
+
+
+<h2>Delay memory</h2>
+<canvas id="memory" width="1024" height="160"></canvas>
+
+<h2>Running program (WCS)</h2>
+<div id="rewrites"></div>
+<pre id="wcs"></pre>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

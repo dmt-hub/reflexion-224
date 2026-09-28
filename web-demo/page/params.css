@@ -1,0 +1,7 @@
+/* The parameter sliders (params.js): one column per page. Shared by index.html and compare.html. */
+#pages { display: flex; flex-wrap: wrap; gap: 1.5em; }
+.page { width: 17em; }
+.page .heading { color: gray; font-size: small; min-height: 1.3em; }
+.slider { display: block; margin: 0.4em 0; }
+.slider span { display: block; font-family: monospace; }
+.slider input { width: 100%; }

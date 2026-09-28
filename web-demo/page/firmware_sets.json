@@ -1,0 +1,247 @@
+[
+ {
+  "name": "224 TEST",
+  "model": 1,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "46a3ce87b9d2e337654bdb1987ed5cd6c94ba7532192b1502d116b699456dbb9"
+   },
+   {
+    "base": 2048,
+    "sha256": "0c1273036c8165cd1351e3ef82786b1acb640c30a971c0db4f752e837bd6df5e"
+   },
+   {
+    "base": 4096,
+    "sha256": "49562d79897c664fecf93786ca948d9496a110d9ec92c4bdc8538633a714adfa"
+   },
+   {
+    "base": 6144,
+    "sha256": "93c38f2e7bf18f5062abdd2cadaac4056eae049a7ee00a68b5eff78e5de597d1"
+   }
+  ]
+ },
+ {
+  "name": "224 v2.2",
+  "model": 1,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "d265e1588b231933f9ece684b00ac4c763b78624d9c19f2d04dff5a82a683ae7"
+   },
+   {
+    "base": 2048,
+    "sha256": "ba9f8a618afb9f8967d1ecbad25ed0633cf68be93af57bb091e5a9b04fd44345"
+   },
+   {
+    "base": 4096,
+    "sha256": "f051e7ac4900583883fa13b595ce6c7b8992ebccd2aac0a959502bc062abbb23"
+   },
+   {
+    "base": 6144,
+    "sha256": "0124e5a1c69eec3794b934e6ed2059b56dfbfe53da20d5878f590b3ee5c42b09"
+   }
+  ],
+  "unsupported": "writes port 0xEF, which the 224's SBC does not have"
+ },
+ {
+  "name": "224 v3.2",
+  "model": 1,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "a1665828803f72c4665c12f007bf27968f546feb25fa214141ec415f1e7361f7"
+   },
+   {
+    "base": 2048,
+    "sha256": "f0d6eb7aeb89f987205a68ce52878f4cd800878f412c7c762a844d7fd3855550"
+   },
+   {
+    "base": 4096,
+    "sha256": "d5e174f08483bcd55f7fbdf1f460a3d8dda484b359c80cf921dbcd80a2d0a0cd"
+   },
+   {
+    "base": 6144,
+    "sha256": "70dc6366b84ea5475d4ab79157b5456fe4524e91dd36812b10d727f7e6a95080"
+   }
+  ]
+ },
+ {
+  "name": "224 v4.3",
+  "model": 1,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "cee97db47a0011c81f3fdfb899ec7ebee5ad07eab2c0b1602196f8e37bdaecfa"
+   },
+   {
+    "base": 2048,
+    "sha256": "c899b2ffd6e97ef1e015fc11ca3b779c11450101404abbbae81f465108f05161"
+   },
+   {
+    "base": 4096,
+    "sha256": "d8f70aaf92bdec5ff70953b2cf07925798b4c611a0a854ac5f9953a452543c11"
+   },
+   {
+    "base": 6144,
+    "sha256": "74c1e682150541b3191be175338198a2c3feb6e64351c07b5c133daebf73e254"
+   }
+  ]
+ },
+ {
+  "name": "224 v4.4",
+  "model": 1,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "3dd3926e77cfb1c596f86d94da05521d8353fac77fb58921bcac4e8cb0bd9c77"
+   },
+   {
+    "base": 2048,
+    "sha256": "457acfa9a97b10e275cb798298aa0e46c84f451123ae67c6e340d5a46085cd47"
+   },
+   {
+    "base": 4096,
+    "sha256": "612566588637bf5b69747174d95dc13553ad28484f88bda8bdc28dbee0b2abfd"
+   },
+   {
+    "base": 6144,
+    "sha256": "22e6e075f2d48cd97f5584dd8e58f70b2f1a8dc127ed3ae79471876bab079b9d"
+   }
+  ]
+ },
+ {
+  "name": "224X v8.1",
+  "model": 0,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "dd3ebc01ce08ae6f12feaf86a04d7328f894a9c735014c0e5be5c9dd97b0002d"
+   },
+   {
+    "base": 2048,
+    "sha256": "82fb0ee8de26ae54279fa17fb8c3f0bf9dfa18e3d9d3f7a57c091a927b56e851"
+   },
+   {
+    "base": 32768,
+    "sha256": "0741c247def484be04cbc0e0d46e4f52331afb4a0935e656631056ab8c67360f"
+   },
+   {
+    "base": 36864,
+    "sha256": "0a3bc54f0ec2df5c1aae664d83822101be851a788aa0c6cdcc80176d68041610"
+   },
+   {
+    "base": 40960,
+    "sha256": "a78c4ba8c96970c333b2a31308cd2aa149ca31e54cab4b8d14105a8f4afc8734"
+   },
+   {
+    "base": 45056,
+    "sha256": "4e652a78f6c1adc8111c61e186799e972252914ad0aa51301ac12a2351b119e0"
+   },
+   {
+    "base": 49152,
+    "sha256": "0e4534f41c2b2c9b3f2d5e81f34517d7ddb4de216b3aa835bc1097e42cb4d7d0"
+   },
+   {
+    "base": 53248,
+    "sha256": "510c97e26c50c7b960ca70f8a337e7351b1527b1ded2003e15d821593c90548e"
+   }
+  ]
+ },
+ {
+  "name": "224XL v8.1A",
+  "model": 0,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "1758513db64680f96bedc8c66794623a01bb175072f3fc64284026256be67967"
+   },
+   {
+    "base": 2048,
+    "sha256": "1c76ae5ce66f7cdb7625a2071c502ebe98ca4b48d397b70e8d2bc74f6f323e7f"
+   },
+   {
+    "base": 4096,
+    "sha256": "a540b8fdb140c6674bce655e7925dc3cded6d41ad68f9f447a01f0385b30e944"
+   },
+   {
+    "base": 32768,
+    "sha256": "4d62698b96bfc45c094a708278c02b54e89f03644aa6f1cbde1a3de10d4d2c88"
+   },
+   {
+    "base": 36864,
+    "sha256": "143bc245d37184a4a20917359a1e8bf0d713e221ff0f1777cad74aefde63690e"
+   },
+   {
+    "base": 40960,
+    "sha256": "9b57b364e357280876be28d7af21cbd52026a48176422ad7fa896018f2d60464"
+   },
+   {
+    "base": 45056,
+    "sha256": "67c2fa09f4cd7024a4185196e31aa0a0ef67a73a1f6d561dbd7dde96d4f3eade"
+   },
+   {
+    "base": 49152,
+    "sha256": "6c37e490fc048845b0d0fc37a532d98814c907e593e46f3874462391aa2945fb"
+   },
+   {
+    "base": 53248,
+    "sha256": "286661233c0f6454022800c5578ba748b0f8eccb27d3eb6ea2015b7414da5747"
+   },
+   {
+    "base": 57344,
+    "sha256": "997c46f899e7259a91b5ba7ac55a84bc3295d1a059ce2f624272286a0548946f"
+   }
+  ]
+ },
+ {
+  "name": "224XL v8.21",
+  "model": 0,
+  "chips": [
+   {
+    "base": 0,
+    "sha256": "35c88203abf84a72e6031fedbcc04b704c1902ee1e445484a70da21f7a3cf321"
+   },
+   {
+    "base": 2048,
+    "sha256": "a8081593711669d8d642f3a73e0987fd21c521a782bf32f270b9b82dded759f5"
+   },
+   {
+    "base": 4096,
+    "sha256": "750db0d480cc88f305b82d5aab6ad046fba0b324d2c7717a752b05b0426bdd8d"
+   },
+   {
+    "base": 32768,
+    "sha256": "45d40ae2f158181a5d2e9a82999fe5cf212cf94f72e58cb8fe57e0f0a9232468"
+   },
+   {
+    "base": 36864,
+    "sha256": "b224fb039179164b0db5584037dd2e463e2b48515944add11683f8d28dfedf25"
+   },
+   {
+    "base": 40960,
+    "sha256": "b0bdd62a0b1c1d84e6c603173e4a8c8f97badd2860325e02bc235de6076ec70a"
+   },
+   {
+    "base": 45056,
+    "sha256": "f31a70e49909226935d23a1ad436d9f7e08fab3a56a86ee5e47060be0ec89557"
+   },
+   {
+    "base": 49152,
+    "sha256": "8c78aad6ba54f32c6582b40cb1b877495d06453e08ac3cf4a6f19829ed9d6bf9"
+   },
+   {
+    "base": 53248,
+    "sha256": "7361ba706cf23b3ee0a1f0cb705bb9ea18ef45dca7b981c3c9a3ff21dbee5ef4"
+   },
+   {
+    "base": 57344,
+    "sha256": "b1711f90d83b271b1b94c8060c8659fd0e392e78c9c1757502f69411da16921f"
+   },
+   {
+    "base": 61440,
+    "sha256": "fc8692770d854c09703ef459082e6991a9153b02dfc85ccb0859eb61e93689ae"
+   }
+  ]
+ }
+]

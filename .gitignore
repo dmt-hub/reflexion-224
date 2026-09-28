@@ -1,0 +1,10 @@
+# Your own firmware: never commit it.
+/firmware/
+/captures/
+
+# Build output
+build/
+/web-demo/page/lexicon224x.js
+/web-demo/page/lexicon224x.wasm
+__pycache__/
+.DS_Store
