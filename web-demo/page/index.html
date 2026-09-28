@@ -57,6 +57,7 @@ Known chips are recognized by content, whatever their names. They stay in this b
 </select></label>
 <label title="How often the click, the impulse, the noise burst, the riff or your file starts again (a file's own length loops it seamlessly; longer adds silence after it).">repeat every <input type="range" id="period" min="0.25" max="20" step="0.05" value="1"> <span id="periodText">1.00 s</span></label>
 <input type="file" id="audioFile" accept="audio/*" hidden>
+<p id="riffCredit" class="hint" hidden>Thank you to <a href="https://www.solonmusic.com/" target="_blank" rel="noopener">SOLON Music</a> for the dry recording. Inspired by his <a href="https://www.youtube.com/watch?v=5cbjUZhDyXs" target="_blank" rel="noopener">224 video</a> and his <a href="https://www.youtube.com/watch?v=X-hGwcU-Ckw" target="_blank" rel="noopener">224XL video</a>.</p>
 <br>
 <label title="Input gain. 0 dB: a full-scale file or microphone reaches the onset of ADC clipping (the red segment); the built-in sounds sit 6 dB below that. A microphone usually wants +12 to +24 dB.">Level <input type="range" id="level" min="-24" max="30" step="1" value="0" autocomplete="off"> <span id="levelText">0 dB</span></label>
 <div id="headroom" title="Input headroom, as the hardware measures it: the AIN's five level detectors, 6 dB apart, 0 dB = the onset of ADC clipping (the firmware lights its front-panel LEDs from the same registers, and its level-dependent features, Decay Optimization and Dynamic Decay, read them too)."></div>

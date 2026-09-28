@@ -6,8 +6,9 @@
 // (sounds/aphex-twin-tha-riff.flac, which loops), silence, a 440 Hz sine,
 // noise bursts, the microphone or line in, and the visitor's own audio file
 // (which loops). Both pages carry the same controls, by id:
-//   #source (with #fileOption), #audioFile, #period, #periodText, #level,
-//   #levelText, #muteInput, #audioStatus (where a microphone error is shown).
+//   #source (with #fileOption), #audioFile, #riffCredit (shown with the riff),
+//   #period, #periodText, #level, #levelText, #muteInput, #audioStatus (where
+//   a microphone error is shown).
 //
 // The samples themselves come from two plain functions without any DOM,
 // inputSample() and advanceInput(), so tests/input_sources.mjs can check
@@ -175,6 +176,7 @@ export function createInput(context) {
   // The microphone (or a line input): raw, without the browser's voice processing.
   async function onSourceChange() {
     lastSource = source();
+    $('riffCredit').hidden = source() !== 'riff';
     // The riff loops at its own length; the other sources get their period back.
     if (source() === 'riff') {
       periodBeforeRiff ??= +$('period').value;
