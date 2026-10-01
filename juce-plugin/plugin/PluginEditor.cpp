@@ -8,8 +8,8 @@ PluginEditor::PluginEditor(PluginProcessor &processor)
             [&processor](lexui::UiSnapshot &s) { processor.readUiSnapshot(s); }, processor.uiCommands()) {
     addAndMakeVisible(view_);
     setResizable(true, true);
-    setResizeLimits(560, 360, 2400, 2000);
-    setSize(1040, 820);
+    setResizeLimits(560, 360, 1900, 1900);
+    setSize(1660, 1150);
 }
 
 PluginEditor::~PluginEditor() = default;
