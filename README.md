@@ -10,7 +10,7 @@ The web page, at https://joelanders.github.io/reflexion-224/:
 
 <img width="750" alt="The web page" src="https://github.com/user-attachments/assets/c0db1bfa-9a64-4a50-8ab3-c72e130a686f" />
 
-The plugin:
+The plugin (changed gui):
 
 <img width="560" alt="The plugin" src="https://github.com/dmt-hub/reflexion-224/blob/0a3649a3879473ee4a7bd56ad715b9b237661f3c/gui.png" />
 
