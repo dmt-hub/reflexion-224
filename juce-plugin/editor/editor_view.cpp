@@ -747,6 +747,7 @@ private:
 EditorView::EditorView(const lexcat::CatalogLibrary &catalogs, const lexcat::ParamHelp &help, SnapshotReader read,
                        UiCommands &commands)
     : catalogs_(catalogs), help_(help), read_(std::move(read)), commands_(commands) {
+    tooltips_.setLookAndFeel(&tooltipLnf_);
     content_ = std::make_unique<Content>(*this);
     viewport_.setViewedComponent(content_.get(), false);
     viewport_.setScrollBarsShown(true, false);
@@ -757,6 +758,7 @@ EditorView::EditorView(const lexcat::CatalogLibrary &catalogs, const lexcat::Par
 }
 
 EditorView::~EditorView() {
+    tooltips_.setLookAndFeel(nullptr);
     stopTimer();
     viewport_.setViewedComponent(nullptr, false);
 }
