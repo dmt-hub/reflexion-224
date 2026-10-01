@@ -772,6 +772,7 @@ void PluginProcessor::publish_meters() {
 }
 
 void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &) {
+    juce::ScopedNoDenormals noDenormals;
     const int n = buffer.getNumSamples();
     for (int c = getTotalNumInputChannels(); c < buffer.getNumChannels(); c++) {
         buffer.clear(c, 0, n);
@@ -812,7 +813,6 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiB
     const float *in_r = buffer.getReadPointer(1);
     float *out_l = buffer.getWritePointer(0);
     float *out_r = buffer.getWritePointer(1);
-    DenormalsOn denormals;
     try {
         bridge_.process(in_l, in_r, out_l, out_r, n,
                         [this](const float *l, const float *r, float *ol, float *orr, int frames) {
