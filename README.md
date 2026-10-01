@@ -12,7 +12,7 @@ The web page, at https://joelanders.github.io/reflexion-224/:
 
 The plugin:
 
-<img width="560" alt="The plugin" src="https://github.com/user-attachments/assets/230c2c7c-5f06-43e8-8b63-90de70f8466e" />
+<img width="560" alt="The plugin" src="[https://github.com/dmt-hub/reflexion-224/blob/0a3649a3879473ee4a7bd56ad715b9b237661f3c/gui.png" />
 
 Lexicon, 224, 224X and 224XL are named only to say what is emulated. This
 project is not affiliated with or endorsed by Lexicon or its owners.
