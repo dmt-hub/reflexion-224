@@ -1,4 +1,4 @@
-# reflexion-224
+# reflexion-224 (this fork works for Arch Linux, fixes state saving, bigger gui)
 
 An emulation of the Lexicon 224, 224X and 224XL digital reverbs that runs
 the machines' own firmware, in your browser or as a plugin. You supply the
