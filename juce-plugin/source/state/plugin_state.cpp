@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
-#include <xlocale.h>
+#include <locale.h>
 
 namespace lexstate {
 
@@ -18,7 +18,9 @@ locale_t cLocale() {
 
 std::string formatFloat(float value) {
     char text[48];
-    snprintf_l(text, sizeof text, cLocale(), "%.9g", double(value));
+    locale_t previous = uselocale(cLocale());
+    snprintf(text, sizeof text, "%.9g", double(value));
+    uselocale(previous);
     return text;
 }
 
