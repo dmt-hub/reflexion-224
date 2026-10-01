@@ -1059,6 +1059,15 @@ void PluginProcessor::getStateInformation(juce::MemoryBlock &block) {
         save = keeper_.forSave(live);
     }
     std::string text = lexstate::serialise(save);
+
+    // Also persist the APVTS state so every parameter value survives a reload.
+    if (auto xml = apvts_.copyState().createXml()) {
+        juce::MemoryBlock apvtsBlock;
+        copyXmlToBinary(*xml, apvtsBlock);
+        auto encoded = juce::Base64::toBase64(apvtsBlock.getData(), apvtsBlock.getSize());
+        text += "\napvts " + encoded.toStdString() + "\n";
+    }
+
     block.replaceAll(text.data(), text.size());
 }
 
@@ -1070,10 +1079,28 @@ void PluginProcessor::setStateInformation(const void *data, int size) {
     if (!lexstate::parse(std::string_view(static_cast<const char *>(data), size_t(size)), state)) {
         return;
     }
-    float values[lexparams::kParamCount] = {};
-    lexstate::directValues(state, values);
-    for (int p = lexparams::kLevelDb; p < lexparams::kParamCount; p++) {
-        set_param(p, values[p]);
+    // Restore the APVTS state if it was saved (covers every parameter).
+    bool apvtsRestored = false;
+    for (const auto &kv : state.extra) {
+        if (kv.first == "apvts") {
+            juce::MemoryOutputStream decoded;
+            if (juce::Base64::convertFromBase64(decoded, kv.second)) {
+                if (auto xml = getXmlFromBinary(decoded.getData(), (int)decoded.getDataSize())) {
+                    if (xml->hasTagName(apvts_.state.getType())) {
+                        apvts_.replaceState(juce::ValueTree::fromXml(*xml));
+                        apvtsRestored = true;
+                    }
+                }
+            }
+        }
+    }
+    if (!apvtsRestored) {
+        // Backwards-compatible fallback for older saved projects.
+        float values[lexparams::kParamCount] = {};
+        lexstate::directValues(state, values);
+        for (int p = lexparams::kLevelDb; p < lexparams::kParamCount; p++) {
+            set_param(p, values[p]);
+        }
     }
     std::string live_hash;
     {
