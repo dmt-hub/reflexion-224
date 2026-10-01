@@ -8,10 +8,10 @@ namespace lexui {
 namespace {
 
 constexpr int kMargin = 16;
-constexpr int kRow = 28;
+constexpr int kRow = 44;
 constexpr int kPageWidth = 310;
 constexpr int kPageGap = 16;
-constexpr float kFont = 15.0f;
+constexpr float kFont = 26.0f;
 // A segment of a meter stays lit this long after its last event (web: 300 ms).
 constexpr double kMeterHold = 0.3;
 // After the user moves a control, the snapshot does not move it back for this long
@@ -76,11 +76,11 @@ public:
         for (juce::Label *h : {&machineHeading_, &audioHeading_, &programHeading_}) {
             addAndMakeVisible(*h);
         }
-        heading(machineHeading_, "Machine and firmware", 20.0f);
-        heading(audioHeading_, "Audio", 20.0f);
-        heading(inputHeading_, "Input", 17.0f);
-        heading(outputHeading_, "Output", 17.0f);
-        heading(programHeading_, "Program", 20.0f);
+        heading(machineHeading_, "Machine and firmware", 26.0f);
+        heading(audioHeading_, "Audio", 26.0f);
+        heading(inputHeading_, "Input", 26.0f);
+        heading(outputHeading_, "Output", 26.0f);
+        heading(programHeading_, "Program", 26.0f);
         addAndMakeVisible(inputHeading_);
         addAndMakeVisible(outputHeading_);
 
@@ -294,14 +294,14 @@ public:
         for (auto &page : pages_) {
             int px = x + column * (kPageWidth + kPageGap);
             int py = rowTop;
-            int height = 52 + int(page->rows.size()) * 50 + 8;
+            int height = 64 + int(page->rows.size()) * 84 + 8;
             page->group.setBounds(px, py, kPageWidth, height);
-            page->heading.setBounds(px + 12, py + 22, kPageWidth - 24, 20);
-            int sy = py + 48;
+            page->heading.setBounds(px + 12, py + 12, kPageWidth - 24, 36);
+            int sy = py + 56;
             for (auto &row : page->rows) {
-                row->label.setBounds(px + 12, sy, kPageWidth - 24, 20);
-                row->slider.setBounds(px + 8, sy + 20, kPageWidth - 16, 26);
-                sy += 50;
+                row->label.setBounds(px + 12, sy, kPageWidth - 24, 36);
+                row->slider.setBounds(px + 8, sy + 36, kPageWidth - 16, 40);
+                sy += 84;
             }
             rowBottom = juce::jmax(rowBottom, py + height);
             column++;
@@ -347,7 +347,7 @@ private:
                 auto cell = std::make_unique<juce::Label>();
                 cell->setText(names[i], juce::dontSendNotification);
                 cell->setJustificationType(juce::Justification::centred);
-                cell->setFont(font(13.0f, false));
+                cell->setFont(font(26.0f, false));
                 cell->setColour(juce::Label::outlineColourId, juce::Colours::grey);
                 cell->setTooltip(tip);
                 addAndMakeVisible(*cell);
@@ -566,7 +566,7 @@ private:
             box->group.setColour(juce::GroupComponent::textColourId, findColour(juce::Label::textColourId));
             addAndMakeVisible(box->group);
             box->heading.setText(page.heading, juce::dontSendNotification);
-            box->heading.setFont(font(13.0f, false));
+            box->heading.setFont(font(26.0f, false));
             box->heading.setColour(juce::Label::textColourId, juce::Colours::grey);
             addAndMakeVisible(box->heading);
             for (size_t slot = 0; slot < page.sliders.size(); slot++) {
@@ -751,7 +751,7 @@ EditorView::EditorView(const lexcat::CatalogLibrary &catalogs, const lexcat::Par
     viewport_.setViewedComponent(content_.get(), false);
     viewport_.setScrollBarsShown(true, false);
     addAndMakeVisible(viewport_);
-    setSize(1040, 820);
+    setSize(1660, 1150);
     refresh();
     startTimerHz(20);
 }
